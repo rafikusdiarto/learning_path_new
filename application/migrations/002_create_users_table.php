@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Create_user_table extends CI_Migration {
+class Migration_Create_users_table extends CI_Migration {
 
     public function up()
     {
@@ -25,11 +25,11 @@ class Migration_Create_user_table extends CI_Migration {
 
         $this->dbforge->add_field($fields);
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('user');
+        $this->dbforge->create_table('users');
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('user');
+        $this->dbforge->drop_table('users');
     }
 }

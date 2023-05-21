@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class Admin_model extends CI_Model {
 
     public function __construct()
     {
@@ -11,7 +11,7 @@ class User_model extends CI_Model {
 
     public function login($email, $password)
     {
-        $query = $this->db->get_where('user', array('email' => $email, 'password' => $password));
+        $query = $this->db->get_where('admin', array('email' => $email, 'password' => $password));
         return $query->row();
     }
 }
