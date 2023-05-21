@@ -28,12 +28,12 @@ class LearningPath extends CI_Controller
 
   public function index()
   {
-		$data['sidebar'] = $this->load->view('layouts/components/sidebar', '', TRUE);
-		$data['navbar'] = $this->load->view('layouts/components/navbar', '', TRUE);
-		$data['footer'] = $this->load->view('layouts/components/footer', '', TRUE);
-		$data['content_view'] = "master/learning_path/index";
+		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
+		$data['content_view'] = "admin/master/learning_path/index";
 
-		$this->load->view('dashboard', $data);
+		$this->load->view('admin/layouts', $data);
   }
 
 }
