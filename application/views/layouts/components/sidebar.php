@@ -35,9 +35,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Learning Path</a>
+                        <a class="collapse-item" href="<?=base_url('admin/learning-path')?>">Learning Path</a>
                         <a class="collapse-item" href="<?=base_url('admin/leader')?>">Leader</a>
-                        <a class="collapse-item" href="cards.html">Members</a>
+                        <a class="collapse-item" href="<?=base_url('admin/member')?>">Members</a>
                     </div>
                 </div>
             </li>
@@ -54,14 +54,14 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?=base_url('admin/quiz')?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Quiz</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?=base_url('admin/all-user')?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Users Account</span></a>
             </li>

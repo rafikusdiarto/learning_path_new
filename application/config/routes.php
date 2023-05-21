@@ -51,5 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['admin'] = 'dashboard/index';
 $route['admin/leader'] = 'leader/index';
+$route['admin/learning-path'] = 'learningpath/index';
+$route['admin/member'] = 'member/index';
+$route['admin/quiz'] = 'questions/index';
+$route['admin/all-user'] = 'user/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

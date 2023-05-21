@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller LearningPath
+ * Controller User
  *
  * This controller for ...
  *
@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class LearningPath extends CI_Controller
+class User extends CI_Controller
 {
     
   public function __construct()
@@ -31,7 +31,7 @@ class LearningPath extends CI_Controller
 		$data['sidebar'] = $this->load->view('layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('layouts/components/footer', '', TRUE);
-		$data['content_view'] = "master/learning_path/index";
+		$data['content_view'] = "users/index";
 
 		$this->load->view('dashboard', $data);
   }
@@ -39,5 +39,5 @@ class LearningPath extends CI_Controller
 }
 
 
-/* End of file LearningPath.php */
-/* Location: ./application/controllers/LearningPath.php */
+/* End of file User.php */
+/* Location: ./application/controllers/User.php */
