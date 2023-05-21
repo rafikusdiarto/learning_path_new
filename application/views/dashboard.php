@@ -12,7 +12,10 @@
     <title>Learning Path</title>
 
     <!-- Custom fonts for this template-->
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<link href="<?=base_url()?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <link  rel="stylesheet" type="text/css" href="<?=base_url()?>vendor/fontawesome-free/css/all.min.css">
     <link
@@ -21,7 +24,6 @@
 
     <!-- Custom styles for this template-->
     <link href="<?=base_url()?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -42,10 +44,11 @@
                 <!-- Topbar -->
                 <?php echo $navbar; ?>
                 <!-- End of Topbar -->
+				<!-- /.container-fluid -->
+				<div class="container-fluid">
+						<?php $this->load->view($content_view); ?>
 
-                <!-- Begin Page Content -->
-                
-                <!-- /.container-fluid -->
+					</div>
 
             </div>
             <!-- End of Main Content -->
@@ -86,7 +89,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?=base_url()?>vendor/jquery/jquery.min.js"></script>
+	<script src="<?=base_url()?>vendor/jquery/jquery.min.js"></script>
     <script src="<?=base_url()?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -101,6 +104,13 @@
     <!-- Page level custom scripts -->
     <script src="<?=base_url()?>assets/js/demo/chart-area-demo.js"></script>
     <script src="<?=base_url()?>assets/js/demo/chart-pie-demo.js"></script>
+
+	<script src="<?=base_url()?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url()?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?=base_url()?>assets/js/demo/datatables-demo.js"></script>
+
 
 </body>
 
