@@ -49,9 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+// auth user
+$route['login'] = 'auth/userauthcontroller/index';
+$route['login/authenticate'] = 'auth/userauthcontroller/authenticate';
+$route['user/logout'] = 'auth/userauthcontroller/logout';
+
+// auth admin
+$route['back-login'] = 'auth/adminauthcontroller/index';
+$route['back-login/authenticate'] = 'auth/adminauthcontroller/authenticate';
+$roite['admin/logout'] = 'auth/adminauthcontroller/logout';
+
 // admin
-$route['default_controller'] = 'login';
-$route['admin'] = 'admin/dashboard/index';
+$route['admin/dashboard'] = 'admin/dashboard/index';
 $route['admin/leader'] = 'admin/leader/index';
 $route['admin/learning-path'] = 'admin/learningpath/index';
 $route['admin/member'] = 'admin/member/index';

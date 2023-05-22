@@ -31,7 +31,7 @@ class Member extends CI_Controller
     $data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
-		$data['content_view'] = "adminmaster/member/index";
+		$data['content_view'] = "admin/master/member/index";
 
 		$this->load->view('admin/layouts', $data);
   }
