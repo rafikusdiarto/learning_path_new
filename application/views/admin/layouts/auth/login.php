@@ -43,21 +43,13 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back Admin</h1>
                                     </div>
-									<div class="notif">
-										<p>
-											<?php echo validation_errors(); ?>
-										</p>
-									</div>
 									<?= form_open('back-login/authenticate'); ?>
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="email" name="email" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="email" name="email" class="form-control form-control-user" placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="password" name="password" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user" placeholder="Password">
                                         </div>
                                         <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

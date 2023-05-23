@@ -51,6 +51,6 @@ class AdminAuthController extends CI_Controller {
     {
         // Remove admin user data from session
         $this->session->unset_userdata('admin_user');
-        redirect('back-login');
+        redirect('login');
     }
 }

@@ -22,31 +22,21 @@ class Dashboard extends CI_Controller
 {
     
   public function __construct()
-  {
-    parent::__construct();
-    // $this->load->model('Admin_model');
-		$this->load->library('session');
-  }
+  	{
+    	parent::__construct();
 
-  public function index()
-  {
-		
-		// $userId = $this->session->userdata('user_id');
-		// $accessLevel = $this->Admin_model->getAccessLevel($userId);
+	}
 
-
-		// if ($accessLevel === false || $accessLevel > 1) {
-		// 	show_404();
-		// }else {
-		// 	# code...
-		// }
+	public function index()
+	{
+			
 		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
 		$data['content_view'] = 'admin/dashboard/index';
 		$this->load->view('admin/layouts', $data);
 
-  }
+	}
 
 }
 

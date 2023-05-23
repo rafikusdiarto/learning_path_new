@@ -24,7 +24,6 @@ class Dashboard extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-		// $this->load->model('User_model');
 		$this->load->library('session');
 
   }
@@ -37,15 +36,6 @@ class Dashboard extends CI_Controller
 		$data['content_view'] = 'users/dashboard/index';
 
 		$this->load->view('users/layouts', $data);
-		// $userId = $this->session->userdata('user_id');
-		// $accessLevel = $this->User_model->getAccessLevel($userId);
-
-		// if ($accessLevel === false || $accessLevel < 2) {
-		// 		show_404();
-		// }else {
-			
-		// }
-
   }
 
 }
