@@ -36,7 +36,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block">
-								<img src="https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg?w=450&t=st=1684684771~exp=1684685371~hmac=23670b54a93b954273e232c8f757c9695c5e65afdebe6942cbd7f0bd8255b8eb" alt="">
+								<img src="https://img.freepik.com/free-vector/leader-concept-illustration_114360-7479.jpg?w=500&t=st=1684821279~exp=1684821879~hmac=c88b22a9b49fc2615df3b87a413164c330381607df83fe9ae77ecefda3562f76" alt="">
 							</div>
                             <div class="col-lg-6">
                                 <div class="p-5">

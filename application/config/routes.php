@@ -55,6 +55,11 @@ $route['login'] = 'auth/userauthcontroller/index';
 $route['login/authenticate'] = 'auth/userauthcontroller/authenticate';
 $route['user/logout'] = 'auth/userauthcontroller/logout';
 
+// auth leader
+$route['login-leader'] = 'auth/leaderauthcontroller/index';
+$route['login/authenticate'] = 'auth/leaderauthcontroller/authenticate';
+$route['leader/logout'] = 'auth/leaderauthcontroller/logout';
+
 // auth admin
 $route['back-login'] = 'auth/adminauthcontroller/index';
 $route['back-login/authenticate'] = 'auth/adminauthcontroller/authenticate';
@@ -71,6 +76,10 @@ $route['admin/all-user'] = 'admin/user/index';
 // user
 $route['user/dashboard'] = 'user/dashboard/index';
 $route['user/learning-path'] = 'user/learningpath/index';
+
+// leader
+$route['leader/dashboard'] = 'leader/dashboard/index';
+$route['leader/learning-path'] = 'leader/learningpath/index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

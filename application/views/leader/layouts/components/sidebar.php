@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('leader')?>">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('leader/dashboard')?>">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -13,9 +13,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?=base_url('leader')?>">
+                <a class="nav-link" href="<?=base_url('leader/dashboard')?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - Member</span></a>
+                    <span>Dashboard - Leader</span></a>
             </li>
 
 
@@ -30,17 +30,12 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="<?=base_url('user/learning-path')?>">
+                <a class="nav-link" href="<?=base_url('leader/learning-path')?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Learning Path</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?=base_url('admin/all-user')?>">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Users Account</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
