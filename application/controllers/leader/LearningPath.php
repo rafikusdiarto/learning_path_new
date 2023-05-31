@@ -36,6 +36,65 @@ class LearningPath extends CI_Controller
     $this->load->view('leader/layouts', $data);
   }
 
+	public function add()
+	{
+		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'leader/learning_path/add';
+
+		$this->load->view('leader/layouts', $data);
+	}
+
+	public function edit_learning_path()
+	{
+		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'leader/learning_path/edit';
+
+		$this->load->view('leader/layouts', $data);
+	}
+
+	public function quiz(){
+		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'leader/quiz/index';
+
+		$this->load->view('leader/layouts', $data);
+
+	}
+
+	public function add_quiz(){
+		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'leader/quiz/add';
+
+		$this->load->view('leader/layouts', $data);
+
+	}
+
+	public function detail_quiz(){
+		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'leader/quiz/detail';
+
+		$this->load->view('leader/layouts', $data);
+
+	}
+
+	public function edit_quiz(){
+		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'leader/quiz/edit';
+
+		$this->load->view('leader/layouts', $data);
+
+	}
 }
 
 

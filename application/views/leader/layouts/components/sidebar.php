@@ -34,6 +34,14 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Learning Path</span></a>
             </li>
+			<hr class="sidebar-divider d-none d-md-block">
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?=base_url('leader/quiz')?>">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Quiz</span></a>
+            </li>
+
 
             <!-- Nav Item - Tables -->
 

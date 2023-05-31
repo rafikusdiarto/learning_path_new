@@ -1,94 +1,66 @@
-<div class="row">
-    <div class="col-sm-12">    
-        <?=form_open_multipart('soal/save', array('id'=>'formsoal'), array('method'=>'add'));?>
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?=$subjudul?></h3>
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <div class="form-group col-sm-12">
-                            <label>Lecturer (Course)</label>
-                            <?php if ($this->ion_auth->is_admin()) : ?>
-                            <select name="dosen_id" required="required" id="dosen_id" class="select2 form-group" style="width:100% !important">
-                                <option value="" disabled selected>Choose Lecturer</option>
-                                <?php foreach ($dosen as $d) : ?>
-                                    <option value="<?=$d->id_dosen?>:<?=$d->matkul_id?>"><?=$d->nama_dosen?> (<?=$d->nama_matkul?>)</option>
-                                <?php endforeach; ?>
-                            </select>
-                            <small class="help-block" style="color: #dc3545"><?=form_error('dosen_id')?></small>
-                            <?php else : ?>
-                            <input type="hidden" name="dosen_id" value="<?=$dosen->id_dosen;?>">
-                            <input type="hidden" name="matkul_id" value="<?=$dosen->matkul_id;?>">
-                            <input type="text" readonly="readonly" class="form-control" value="<?=$dosen->nama_dosen; ?> (<?=$dosen->nama_matkul; ?>)">
-                            <?php endif; ?>
-                        </div>
-                        
-                        <div class="col-sm-12">
-                            <label for="soal" class="control-label">Question</label>
-                            <div class="form-group">
-                                <input type="file" name="file_soal" class="form-control">
-                                <small class="help-block" style="color: #dc3545"><?=form_error('file_soal')?></small>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="soal" id="soal" class="form-control summernote"><?=set_value('soal')?></textarea>
-                                <small class="help-block" style="color: #dc3545"><?=form_error('soal')?></small>
-                            </div>
-                        </div>
-                        
-                        <!-- 
-                            Membuat perulangan A-E 
-                        -->
-                        <?php
-                        $abjad = ['a', 'b', 'c', 'd', 'e'];
-                        foreach ($abjad as $abj) :
-                            $ABJ = strtoupper($abj); // Abjad Kapital
-                        ?>
+<div>
+	<div class="d-flex justify-content-between">
+		<div>
+			<h1 class="h3 mb-2 text-gray-800">Add Learning Path</h1>
+			<p class="mb-4">This is our new program to educate our members with some questions about our product and <br>
+			<b>How To Become A Success Enterpreneur</b> </p>
 
-                        <div class="col-sm-12">
-                            <label for="file">Answer <?= $ABJ; ?></label>
-                            <div class="form-group">
-                                <input type="file" name="file_<?= $abj; ?>" class="form-control">
-                                <small class="help-block" style="color: #dc3545"><?=form_error('file_'.$abj)?></small>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="jawaban_<?= $abj; ?>" id="jawaban_<?= $abj; ?>" class="form-control summernote"><?=set_value('jawaban_a')?></textarea>
-                                <small class="help-block" style="color: #dc3545"><?=form_error('jawaban_'.$abj)?></small>
-                            </div>
-                        </div>
+		</div>
 
-                        <?php endforeach; ?>
+		<div class="p-5">
+			<a href="<?= base_url('leader/learning-path/')?>" class="btn btn-success">
+				<i class="fa fa-arrow-left"></i>	
+			Back</a>
+		</div>
+	</div>
 
-                        <div class="form-group col-sm-12">
-                            <label for="jawaban" class="control-label">Answer key</label>
-                            <select required="required" name="jawaban" id="jawaban" class="form-control select2" style="width:100%!important">
-                                <option value="" disabled selected>Choose Answer key</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
-                            </select>                
-                            <small class="help-block" style="color: #dc3545"><?=form_error('jawaban')?></small>
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label for="bobot" class="control-label">Question Weight</label>
-                            <input required="required" value="1" type="number" name="bobot" placeholder="Question Weight" id="bobot" class="form-control">
-                            <small class="help-block" style="color: #dc3545"><?=form_error('bobot')?></small>
-                        </div>
-                        <div class="form-group pull-right">
-                            <a href="<?=base_url('soal')?>" class="btn btn-flat btn-default"><i class="fa fa-arrow-left"></i> Cancel</a>
-                            <button type="submit" id="submit" class="btn btn-flat bg-purple"><i class="fa fa-save"></i> Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?=form_close();?>
-    </div>
+	<div>
+		<div class="card">
+			<div class="card-body">
+				<div class="mb-3">
+					<label for="nama" class="form-label">Learning Path Title</label>
+					<input type="text" class="form-control" id="title" name="title">
+				</div>
+				<div class="mb-3">
+					<label for="no_rek" class="form-label">Total Step</label>
+					<input type="text" class="form-control" id="step" name="step">
+				</div>
+				<div class="mb-3">
+					<label for="nama" class="form-label">Link Youtube</label>
+					<input type="text" class="form-control" id="title" name="title">
+				</div>
+				<div class="mb-3">
+					<label for="no_rek" class="form-label">Thumbnail</label>
+					<img id="image-preview" width="300px" class="mb-2">
+					<input class="form-control" type="file" id="image-input" name="image" onchange="previewImage()">
+				</div>
+				<!-- <div class="mb-3">
+					<label for="tanggal_bayar" class="form-label">Tanggal Bayar</label>
+					<input type="date" class="form-control" id="tanggal_bayar" name="tanggal_bayar">
+				</div>
+				<div class="mb-3">
+					<label for="expired_date" class="form-label">Expired Date</label>
+					<input type="text" class="form-control" id="expired_date" name="expired_date" readonly>
+				</div> -->
+				<button type="submit" class="btn btn-primary">Simpan</button>
+			</div>
+		</div>
+	</div>
 </div>
+<script>
+	// Image Preview
+	function previewImage() 
+	{
+		const image_input = document.querySelector("#image-input");
+		const image_preview = document.querySelector("#image-preview");
+		
+		image_preview.style.display = "block";
+
+		const oFReader = new FileReader();
+		oFReader.readAsDataURL(image_input.files[0]);
+
+		oFReader.onload = function(oFREvent) {
+			image_preview.src = oFREvent.target.result;
+		}
+	}
+</script>
