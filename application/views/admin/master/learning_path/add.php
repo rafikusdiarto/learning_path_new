@@ -1,57 +1,66 @@
-<div class="box">
-    <div class="box-header with-border">
-        <h3 class="box-title">Form <?=$judul?></h3>
-        <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-        </div>
-    </div>
-    <div class="box-body">
-        <div class="row">
-            <div class="col-sm-offset-4 col-sm-4">
-                <div class="my-2">
-                    <div class="form-horizontal form-inline">
-                        <a href="<?=base_url('matkul')?>" class="btn btn-default btn-xs">
-                            <i class="fa fa-arrow-left"></i> Cancel
-                        </a>
-                        <div class="pull-right">
-                            <span> Amount : </span><label for=""><?=$banyak?></label>
-                        </div>
-                    </div>
-                </div>
-                <?=form_open('matkul/save', array('id'=>'matkul'), array('mode'=>'add'))?>
-                <table id="form-table" class="table text-center table-condensed">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Course</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for ($i=1; $i <= $banyak; $i++) : ?> 
-                            <tr>
-                                <td><?=$i?></td>
-                                <td>
-                                    <div class="form-group">
-                                        <input autofocus="autofocus" onfocus="this.select()" autocomplete="off" type="text" name="nama_matkul[<?=$i?>]" class="form-control">
-                                        <small class="help-block text-right"></small>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php endfor; ?>
-                    </tbody>
-                </table>
-                <button id="submit" type="submit" class="mb-4 btn btn-block btn-flat bg-purple">
-                    <i class="fa fa-save"></i> Save
-                </button>
-                <?=form_close()?>
-            </div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-    var inputs ='';
-    var banyak = '<?=$banyak;?>';
-</script>
+<div>
+	<div class="d-flex justify-content-between">
+		<div>
+			<h1 class="h3 mb-2 text-gray-800">Add Learning Path</h1>
+			<p class="mb-4">This is our new program to educate our members with some questions about our product and <br>
+			<b>How To Become A Success Enterpreneur</b> </p>
 
-<script src="<?=base_url()?>assets/dist/js/app/master/matkul/add.js"></script>
+		</div>
+
+		<div class="p-5">
+			<a href="<?= base_url('admin/learning-path/')?>" class="btn btn-success">
+				<i class="fa fa-arrow-left"></i>	
+			Back</a>
+		</div>
+	</div>
+
+	<div>
+		<div class="card">
+			<div class="card-body">
+				<div class="mb-3">
+					<label for="nama" class="form-label">Learning Path Title</label>
+					<input type="text" class="form-control" id="title" name="title">
+				</div>
+				<div class="mb-3">
+					<label for="no_rek" class="form-label">Total Step</label>
+					<input type="text" class="form-control" id="step" name="step">
+				</div>
+				<div class="mb-3">
+					<label for="nama" class="form-label">Link Youtube</label>
+					<input type="text" class="form-control" id="title" name="title">
+				</div>
+				<div class="mb-3">
+					<label for="no_rek" class="form-label">Thumbnail</label>
+					<img id="image-preview" width="300px" class="mb-2">
+					<input class="form-control" type="file" id="image-input" name="image" onchange="previewImage()">
+				</div>
+				<!-- <div class="mb-3">
+					<label for="tanggal_bayar" class="form-label">Tanggal Bayar</label>
+					<input type="date" class="form-control" id="tanggal_bayar" name="tanggal_bayar">
+				</div>
+				<div class="mb-3">
+					<label for="expired_date" class="form-label">Expired Date</label>
+					<input type="text" class="form-control" id="expired_date" name="expired_date" readonly>
+				</div> -->
+				<button type="submit" class="btn btn-primary">Simpan</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	// Image Preview
+	function previewImage() 
+	{
+		const image_input = document.querySelector("#image-input");
+		const image_preview = document.querySelector("#image-preview");
+		
+		image_preview.style.display = "block";
+
+		const oFReader = new FileReader();
+		oFReader.readAsDataURL(image_input.files[0]);
+
+		oFReader.onload = function(oFREvent) {
+			image_preview.src = oFREvent.target.result;
+		}
+	}
+</script>

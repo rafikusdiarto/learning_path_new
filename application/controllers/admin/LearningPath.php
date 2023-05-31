@@ -36,6 +36,25 @@ class LearningPath extends CI_Controller
 		$this->load->view('admin/layouts', $data);
   }
 
+  public function add()
+  {
+		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
+		$data['content_view'] = "admin/master/learning_path/add";
+
+		$this->load->view('admin/layouts', $data);
+  }
+  public function edit()
+  {
+		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
+		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
+		$data['content_view'] = "admin/master/learning_path/edit";
+
+		$this->load->view('admin/layouts', $data);
+  }
+
 }
 
 
