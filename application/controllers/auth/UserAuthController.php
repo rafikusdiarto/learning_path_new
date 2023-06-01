@@ -37,7 +37,7 @@ class UserAuthController extends CI_Controller {
             if ($user) {
                 // Login successful, store user data in session
                 $this->session->set_userdata('user_id');
-                redirect('user/dashboard'); // Change 'dashboard' to the desired redirect URL
+                redirect('member/dashboard'); // Change 'dashboard' to the desired redirect URL
             } else {
                 // Login failed, show error message
                 $data['error'] = 'Invalid username or password';

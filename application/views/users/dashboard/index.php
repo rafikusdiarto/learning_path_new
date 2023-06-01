@@ -86,7 +86,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
           <div class="solution_card">
@@ -143,7 +143,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
           <div class="solution_card">
@@ -260,7 +260,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
         </div>
@@ -318,7 +318,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
           <div class="solution_card">
@@ -375,7 +375,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
         </div>
@@ -435,7 +435,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
           <div class="solution_card">
@@ -492,7 +492,7 @@
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <button type="button" class="read_more_btn">Read More</button>
+              <a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info">Read More</a>
             </div>
           </div>
         </div>

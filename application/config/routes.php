@@ -76,8 +76,8 @@ $route['admin/quiz'] = 'admin/questions/index';
 $route['admin/all-user'] = 'admin/user/index';
 
 // user
-$route['user/dashboard'] = 'user/dashboard/index';
-$route['user/learning-path'] = 'user/learningpath/index';
+$route['member/dashboard'] = 'user/dashboard/index';
+$route['member/learning-path/detail'] = 'user/learningpath/index';
 
 // leader
 $route['leader/dashboard'] = 'leader/dashboard/index';
