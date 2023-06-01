@@ -20,7 +20,6 @@ class UserAuthController extends CI_Controller {
 
     public function authenticate()
     {
-        // Validate the login form data
         $this->form_validation->set_rules("email", "Email", "required|valid_email");
         $this->form_validation->set_rules("password", "Password", "required");
 		

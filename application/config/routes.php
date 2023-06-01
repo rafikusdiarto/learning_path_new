@@ -57,7 +57,7 @@ $route['user/logout'] = 'auth/userauthcontroller/logout';
 
 // auth leader
 $route['login-leader'] = 'auth/leaderauthcontroller/index';
-$route['login/authenticate'] = 'auth/leaderauthcontroller/authenticate';
+$route['login/leader/authenticate'] = 'auth/leaderauthcontroller/authenticate';
 $route['leader/logout'] = 'auth/leaderauthcontroller/logout';
 
 // auth admin

@@ -43,7 +43,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back Leader</h1>
                                     </div>
-									<?= form_open('login/authenticate'); ?>
+									<?= form_open('login/leader/authenticate'); ?>
 
                                     <form class="user">
                                         <div class="form-group">
