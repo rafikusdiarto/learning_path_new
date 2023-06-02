@@ -78,6 +78,7 @@ $route['admin/all-user'] = 'admin/user/index';
 // user
 $route['member/dashboard'] = 'user/dashboard/index';
 $route['member/learning-path/detail'] = 'user/learningpath/index';
+$route['member/learning-path/quiz'] = 'user/learningpath/start_quiz';
 
 // leader
 $route['leader/dashboard'] = 'leader/dashboard/index';

@@ -16,7 +16,7 @@
 									</p>
 									<p class="mt-3">Learn more with to do quiz !!</p>
 
-									<a href="#" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
+									<a href="<?= base_url('member/learning-path/quiz') ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
 								</div>
 								<div class="col-12 col-md-5 mb-4 ml-md-auto">
 									<img alt="image" class="img-fluid img-center mr-auto ml-auto d-none d-md-block" src="https://img.freepik.com/free-photo/front-view-open-books-with-glasses_23-2148255840.jpg?w=740&t=st=1685643297~exp=1685643897~hmac=36758773aee42430e4d7bea0211e9bc4ad9e534848cead771f772ca90a94b63f">

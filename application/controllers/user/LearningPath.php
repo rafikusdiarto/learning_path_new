@@ -36,6 +36,15 @@ class LearningPath extends CI_Controller
     $this->load->view('users/layouts', $data);
   }
 
+	public function start_quiz(){
+		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
+		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
+		$data['content_view'] = 'users/learning_path/quiz';
+
+    $this->load->view('users/layouts', $data);
+
+	}
+
 }
 
 
