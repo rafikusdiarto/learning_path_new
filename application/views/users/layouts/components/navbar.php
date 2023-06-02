@@ -9,7 +9,7 @@
 		</div>
 	</form>
 	<ul class="navbar-nav ml-auto">
-	
+
 		<!-- Nav Item - Search Dropdown (Visible Only XS) -->
 		<li class="nav-item dropdown no-arrow d-sm-none">
 			<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -43,7 +43,7 @@
 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
 				<img class="img-profile rounded-circle"
-					src="img/undraw_profile.svg">
+					src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1685678301~exp=1685678901~hmac=26ca8abd5a0f3594fd986c83011b48103ca2a7db5343a01bac07a782e3dd2af3">
 			</a>
 			<!-- Dropdown - User Information -->
 			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -113,7 +113,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1685678301~exp=1685678901~hmac=26ca8abd5a0f3594fd986c83011b48103ca2a7db5343a01bac07a782e3dd2af3"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
