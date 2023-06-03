@@ -29,6 +29,7 @@
 						<tr>
 							<th>No</th>
 							<th>Learning Path Title</th>
+							<th>Deskripsi</th>
 							<!-- <th>Total Step</th>
 							<th>Leader Name</th> -->
 							<th>Thumbnail</th>
@@ -42,6 +43,7 @@
 						<tr?>
 							<td><?php echo $no++; ?></td>
 							<td><?php echo $info->title; ?></td>
+							<td><?php echo $info->description; ?></td>
 							<!-- <td>61</td>
 							<td>Mail</td> -->
 							<td>
