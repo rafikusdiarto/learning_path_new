@@ -84,6 +84,7 @@ $route['member/learning-path/quiz'] = 'user/learningpath/start_quiz';
 $route['leader/dashboard'] = 'leader/dashboard/index';
 $route['leader/learning-path'] = 'leader/learningpath/index';
 $route['leader/learning-path/add'] = 'leader/learningpath/add';
+$route['leader/learning-path/create'] = 'leader/learningpath/create';
 $route['leader/learning-path/edit'] = 'leader/learningpath/edit_learning_path';
 $route['leader/quiz'] = 'leader/learningpath/quiz';
 $route['leader/quiz/add'] = 'leader/learningpath/add_quiz';
