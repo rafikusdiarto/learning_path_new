@@ -88,10 +88,10 @@ $route['leader/learning-path/create'] = 'leader/learningpath/create';
 $route['leader/learning-path/edit/(:num)'] = 'leader/learningpath/edit_learning_path/$1';
 $route['leader/learning-path/update/(:num)'] = 'leader/learningpath/update_learning_path/$1';
 $route['leader/learning-path/delete/(:num)'] = 'leader/learningpath/delete_learning_path/$1';
-$route['leader/quiz'] = 'leader/learningpath/quiz';
-$route['leader/quiz/add'] = 'leader/learningpath/add_quiz';
-$route['leader/quiz/edit'] = 'leader/learningpath/edit_quiz';
-$route['leader/quiz/detail'] = 'leader/learningpath/detail_quiz';
+$route['leader/quiz'] = 'leader/quiz/quiz';
+$route['leader/quiz/add'] = 'leader/quiz/add_quiz';
+$route['leader/quiz/edit'] = 'leader/quiz/edit_quiz';
+$route['leader/quiz/detail'] = 'leader/quiz/detail_quiz';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
