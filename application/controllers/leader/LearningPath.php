@@ -78,15 +78,31 @@ class LearningPath extends CI_Controller
         // Upload gambar
     }
 
-	public function edit_learning_path()
+	public function edit_learning_path($id)
 	{
 		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
+		$data['learning_path'] = $this->LearningPath_model->get_learning_path_by_id($id);
 		$data['content_view'] = 'leader/learning_path/edit';
 
 		$this->load->view('leader/layouts', $data);
 	}
+
+	public function update_learning_path($id) {
+
+		$data = [
+			'title' => $this->input->post('title'),
+			'link_youtube' => $this->input->post('link_youtube'),
+			'description' => $this->input->post('description'),
+		];
+
+        $affected_rows = $this->LearningPath_model->update_learning_path($id, $data);
+
+        if ($affected_rows) {
+            redirect('leader/learning-path');
+        }
+    }
 
 	public function quiz(){
 		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
@@ -128,27 +144,30 @@ class LearningPath extends CI_Controller
 
 	}
 
-    public function edit($id)
-    {
-        // Handle form submission to update artikel
-        if ($this->input->post()) {
-            $data = array(
-                'judul' => $this->input->post('judul'),
-                'isi' => $this->input->post('isi'),
-                'tanggal' => date('Y-m-d')
-            );
-            $this->LearningPath->update_artikel($id, $data);
-            redirect('artikel');
-        } else {
-            $data['artikel'] = $this->LearningPath->get_artikel_by_id($id);
-            $this->load->view('artikel/edit', $data);
-        }
-    }
+    // public function edit($id)
+    // {
+    //     // Handle form submission to update artikel
+    //     if ($this->input->post()) {
+    //         $data = array(
+    //             'judul' => $this->input->post('judul'),
+    //             'isi' => $this->input->post('isi'),
+    //             'tanggal' => date('Y-m-d')
+    //         );
+    //         $this->LearningPath->update_artikel($id, $data);
+    //         redirect('artikel');
+    //     } else {
+    //         $data['artikel'] = $this->LearningPath->get_artikel_by_id($id);
+    //         $this->load->view('artikel/edit', $data);
+    //     }
+    // }
 
-    public function delete($id)
+    public function delete_learning_path($id)
     {
-        $this->LearningPath->delete_artikel($id);
-        redirect('artikel');
+		$affected_rows = $this->LearningPath_model->delete_learning_path($id);
+
+        if ($affected_rows) {
+            redirect('leader/learning-path');
+        }
     }
 }
 

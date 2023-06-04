@@ -27,7 +27,8 @@ class LearningPath_model extends CI_Model {
     public function update_learning_path($id, $data)
     {
         $this->db->where('id', $id);
-        return $this->db->update('learning_path', $data);
+        $this->db->update('learning_path', $data);
+        return $this->db->affected_rows();
     }
 
     public function delete_learning_path($id)

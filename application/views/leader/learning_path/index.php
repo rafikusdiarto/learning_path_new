@@ -54,8 +54,8 @@
 							</td>
 							<td>
 								<div>
-									<a href="<?= base_url('leader/learning-path/edit')?>" class="btn btn-info">Edit</a>
-									<a href="" class="btn btn-danger">Delete</a>
+									<a href="<?php echo base_url('leader/learning-path/edit/'.$info->id); ?>" class="btn btn-info">Edit</a>
+									<a href="<?php echo base_url('leader/learning-path/delete/'.$info->id); ?>" onclick="confirm('yakin hapus data ?')" class="btn btn-danger">Delete</a>
 								</div>
 							</td>
 						</tr>
