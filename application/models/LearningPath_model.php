@@ -35,4 +35,8 @@ class LearningPath_model extends CI_Model {
     {
         return $this->db->delete('learning_path', array('id' => $id));
     }
+	
+	public function get_data_count() {
+        return $this->db->count_all('learning_path'); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
+    }
 }
