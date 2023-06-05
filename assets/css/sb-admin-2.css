@@ -4013,6 +4013,7 @@ input[type="button"].btn-block {
   }
 }
 
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -4102,7 +4103,8 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
