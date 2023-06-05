@@ -32,6 +32,7 @@ class Quiz extends CI_Controller
   }
 
 	public function quiz(){
+		$data['quiz'] = $this->Quiz_model->get_all_quiz();
 		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
@@ -73,7 +74,10 @@ class Quiz extends CI_Controller
         redirect('leader/quiz');
 	}
 
-	public function detail_quiz(){
+	public function detail_quiz($id){
+		$data['detail_quiz'] = $this->Quiz_model->get_quiz_by_id($id);
+
+		// $data['detail_quiz'] = $this->Quiz_model->get_all_quiz();
 		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
@@ -83,6 +87,7 @@ class Quiz extends CI_Controller
 
 	}
 
+	
 	public function edit_quiz(){
 		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);

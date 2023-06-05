@@ -27,25 +27,27 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>Leader</th>
 							<th>Learning Path</th>
 							<th>Questions</th>
 							<th>Action</th>
 						</tr>
 					</thead>
+					<?php $no = 1; ?>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Mail</td>
-							<td>Improve Your Skills</td>
-							<td>apa itu laravel??</td>
-							<td>
-								<div>
-									<a href="<?= base_url('leader/quiz/detail')?>" class="btn btn-primary">Detail</a>
-									<a href="<?= base_url('leader/quiz/edit')?>" class="btn btn-info">Edit</a>
-									<a href="" class="btn btn-danger">Delete</a>
-								</div>
-							</td>
+						<?php foreach ($quiz as $info):?>
+							<tr>
+								<td><?php echo $no++; ?></td>
+								<td><?php echo $info->learning_path_name; ?></td>
+								<td><?php echo $info->questions_text; ?></td>
+								<td>
+									<div>
+										<a href="<?= base_url('leader/quiz/detail/'. $info->id)?>" class="btn btn-primary">Detail</a>
+										<a href="<?= base_url('leader/quiz/edit'. $info->id)?>" class="btn btn-info">Edit</a>
+										<a href="" class="btn btn-danger">Delete</a>
+									</div>
+								</td>
+							</tr>
+						<?php endforeach ?>
 					</tbody>
 				</table>
 			</div>

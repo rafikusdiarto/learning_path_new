@@ -11,7 +11,12 @@ class Quiz_model extends CI_Model {
 
     public function get_all_quiz()
     {
-        return $this->db->get('quiz')->result();
+        $this->db->select('quiz.*, learning_path.title as learning_path_name');
+        $this->db->from('quiz');
+        $this->db->join('learning_path', 'quiz.learning_path_id = learning_path.id');
+        $query = $this->db->get();
+        
+        return $query->result();
     }
 
     public function get_quiz_by_id($id)
