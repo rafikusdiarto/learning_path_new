@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Create_quiz_table extends CI_Migration {
+class Migration_Create_quizes_table extends CI_Migration {
 
     public function up()
     {
@@ -51,13 +51,13 @@ class Migration_Create_quiz_table extends CI_Migration {
         ));
 
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('quiz');
-		$this->db->query('ALTER TABLE quiz ADD FOREIGN KEY (learning_path_id) REFERENCES learning_path(id) ON DELETE CASCADE');
+        $this->dbforge->create_table('quizes', TRUE);
+		$this->db->query('ALTER TABLE quizes ADD FOREIGN KEY (learning_path_id) REFERENCES learning_paths(id) ON DELETE CASCADE ON UPDATE CASCADE ');
 
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('quiz');
+        $this->dbforge->drop_table('quizes');
     }
 }

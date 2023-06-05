@@ -55,7 +55,7 @@
 							<option value="D">D</option>
 						</select>		
 					</div>
-					<div class="mb-3">
+					<div class="mb-3 mt-5">
 						<label for="questions_score" class="form-label">Questions Score</label>
 						<input type="number" class="form-control" id="questions_score" name="questions_score" required>
 					</div>

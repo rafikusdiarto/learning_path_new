@@ -75,7 +75,7 @@ $config['migration_version'] = 5;
 |--------------------------------------------------------------------------
 | Migrations Path
 |--------------------------------------------------------------------------
-|
+|	
 | Path to your migrations folder.
 | Typically, it will be within your application path.
 | Also, writing permission is required within the migrations path.

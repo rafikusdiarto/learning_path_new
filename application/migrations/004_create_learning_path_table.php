@@ -24,6 +24,10 @@ class Migration_Create_learning_path_table extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
+            'description' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ),
 			'created_at datetime default current_timestamp',
 			'updated_at datetime default current_timestamp on update current_timestamp',
 			'status' => 
@@ -34,11 +38,11 @@ class Migration_Create_learning_path_table extends CI_Migration {
         ));
 
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('learning_path');
+        $this->dbforge->create_table('learning_paths');
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('learning_path');
+        $this->dbforge->drop_table('learning_paths');
     }
 }

@@ -13,10 +13,12 @@
 			Tambah Learning Path</a>
 		</div>
 
-		<?php if ($this->session->flashdata('success')) : ?>
-        	<div style="color: green;"><?php echo $this->session->flashdata('success'); ?></div>
-    	<?php endif; ?>
 	</div>
+	<?php if ($this->session->flashdata('success')) { ?>
+	<div class="alert alert-success">
+		<?php echo $this->session->flashdata('success'); ?>
+	</div>
+	<?php } ?>
                     <!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">

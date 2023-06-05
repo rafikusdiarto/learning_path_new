@@ -73,7 +73,12 @@ class LearningPath extends CI_Controller
             }
         }
 
-        $this->LearningPath_model->create_learning_path($data);
+        $learning_path_id = $this->LearningPath_model->create_learning_path($data);
+        if ($learning_path_id) {
+            $this->session->set_flashdata('success', 'Learning Path created successfully.');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to create Learning Path.');
+        }
         redirect('leader/learning-path');
         // Upload gambar
     }

@@ -10,33 +10,33 @@ class LearningPath_model extends CI_Model {
 
     public function get_all_learning_path()
     {
-        return $this->db->get('learning_path')->result();
+        return $this->db->get('learning_paths')->result();
     }
 
     public function get_learning_path_by_id($id)
     {
-        return $this->db->get_where('learning_path', array('id' => $id))->row();
+        return $this->db->get_where('learning_paths', array('id' => $id))->row();
     }
 
     public function create_learning_path($data)
     {
-        $this->db->insert('learning_path', $data);
+        $this->db->insert('learning_paths', $data);
 		return $this->db->insert_id();
     }
 
     public function update_learning_path($id, $data)
     {
         $this->db->where('id', $id);
-        $this->db->update('learning_path', $data);
+        $this->db->update('learning_paths', $data);
         return $this->db->affected_rows();
     }
 
     public function delete_learning_path($id)
     {
-        return $this->db->delete('learning_path', array('id' => $id));
+        return $this->db->delete('learning_paths', array('id' => $id));
     }
 	
 	public function get_data_count() {
-        return $this->db->count_all('learning_path'); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
+        return $this->db->count_all('learning_paths'); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
     }
 }

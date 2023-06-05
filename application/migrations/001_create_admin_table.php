@@ -16,6 +16,10 @@ class Migration_Create_admin_table extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ),
+			'email' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '100' 
+			),
             'password' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '255',
