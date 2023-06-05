@@ -1,15 +1,21 @@
 
-<div class="d-flex justify-content-between">
+	<div class="d-flex justify-content-between">
 		<div>
 			<h1 class="h3 mb-2 mt-5 text-gray-800">Add Questions For Learning Path</h1>
 		</div>
 
 		<div class="p-5">
-			<a href="<?= base_url('leader/learningpath/add_quiz')?>" class="btn btn-success">
+			<a href="<?= base_url('leader/quiz/add')?>" class="btn btn-success">
 				<i class="fa fa-plus"></i>	
 			Tambah Quiz</a>
 		</div>
 	</div>
+
+	<?php if ($this->session->flashdata('success')) { ?>
+        <div class="alert alert-success">
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <?php } ?>
                     <!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">

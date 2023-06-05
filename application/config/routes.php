@@ -90,8 +90,10 @@ $route['leader/learning-path/update/(:num)'] = 'leader/learningpath/update_learn
 $route['leader/learning-path/delete/(:num)'] = 'leader/learningpath/delete_learning_path/$1';
 $route['leader/quiz'] = 'leader/quiz/quiz';
 $route['leader/quiz/add'] = 'leader/quiz/add_quiz';
-$route['leader/quiz/edit'] = 'leader/quiz/edit_quiz';
-$route['leader/quiz/detail'] = 'leader/quiz/detail_quiz';
+$route['leader/quiz/create'] = 'leader/quiz/create';
+$route['leader/quiz/edit/(:num)'] = 'leader/quiz/edit_quiz/$1';
+$route['leader/quiz/update/(:num)'] = 'leader/quiz/update_quiz/$1';
+$route['leader/quiz/detail/(:num)'] = 'leader/quiz/detail_quiz/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
