@@ -1,9 +1,14 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 	<!-- Topbar Navbar -->
-	<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-		<div class="input-group">
+	<form class="d-flex mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+		<div class="mr-3">
 			<a href="<?= base_url('member/dashboard') ?>" class="btn btn-primary" type="button">
 				Home <i class="fas fa-home fa-sm"></i>
+			</a>
+		</div>
+		<div class="">
+			<a href="<?= base_url('member/learning-path/quiz/history') ?>" class="btn btn-primary" type="button">
+				History Quiz <i class="fas fa-pen fa-sm"></i>
 			</a>
 		</div>
 	</form>

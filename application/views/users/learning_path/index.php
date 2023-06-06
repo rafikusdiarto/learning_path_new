@@ -5,7 +5,7 @@
             <div class="col col-md-12 pr-md-5 pl-md-5">
                 <div class="bd-example bd-example-tabs">
                     <ul class="nav nav-pills  flex-column justify-content-center flex-sm-row mb-3" id="pills-tab" role="tablist">
-						<span class="nav-link pt-md-3 pb-md-3 pr-md-5 pl-md-5 bg-primary text-white" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa fa-laptop fa-lg text-white" aria-hidden="false"></i> Learning Path 1</span>
+						<span class="nav-link pt-md-3 pb-md-3 pr-md-5 pl-md-5 bg-primary text-white" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa fa-laptop fa-lg text-white" aria-hidden="false"></i><?php echo $learning_path_detail->title; ?></span>
 
 						<div class="container-fluid mt-5">
 							<div class="row align-items-center justify-content-between">
