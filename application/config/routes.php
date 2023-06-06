@@ -78,7 +78,7 @@ $route['admin/all-user'] = 'admin/user/index';
 // user
 $route['member/dashboard'] = 'user/dashboard/index';
 $route['member/learning-path/detail/(:num)'] = 'user/learningpath/index/$1';
-$route['member/learning-path/quiz'] = 'user/learningpath/start_quiz';
+$route['member/learning-path/quiz/(:num)'] = 'user/learningpath/start_quiz/$1';
 $route['member/learning-path/video'] = 'user/learningpath/view_video';
 
 // leader

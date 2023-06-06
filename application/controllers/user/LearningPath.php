@@ -26,6 +26,7 @@ class LearningPath extends CI_Controller
     parent::__construct();
 		$this->load->library('session');
 		$this->load->model('LearningPath_model');
+		$this->load->model('Quiz_model');
 
   }
 
@@ -40,7 +41,8 @@ class LearningPath extends CI_Controller
     $this->load->view('users/layouts', $data);
   }
 
-	public function start_quiz(){
+	public function start_quiz($id){
+		$data['quizes'] = $this->Quiz_model->get_quiz_by_learningpath($id);
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
 		$data['content_view'] = 'users/learning_path/quiz';
@@ -53,6 +55,8 @@ class LearningPath extends CI_Controller
 	{
 		$this->load->view('users/learning_path/video');
 	}
+
+	
 
 }
 

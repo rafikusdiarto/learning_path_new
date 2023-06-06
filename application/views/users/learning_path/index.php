@@ -16,7 +16,7 @@
 									</p>
 									<p class="mt-3">Learn more with to do quiz !!</p>
 
-									<a href="<?= base_url('member/learning-path/quiz') ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
+									<a href="<?= base_url('member/learning-path/quiz/'. $learning_path_detail->id) ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
 								</div>
 								<div class="col-12 col-md-5 mb-4 ml-md-auto">
 								<iframe width="560" height="315" src="<?php echo base_url('member/learning-path/video'); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
