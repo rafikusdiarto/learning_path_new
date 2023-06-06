@@ -81,6 +81,7 @@ $route['member/learning-path/detail/(:num)'] = 'user/learningpath/index/$1';
 $route['member/learning-path/quiz/(:num)'] = 'user/learningpath/start_quiz/$1';
 $route['member/learning-path/submit-quiz/(:num)'] = 'user/learningpath/submit_quiz/$1';
 $route['member/learning-path/quiz/history'] = 'user/learningpath/history';
+$route['member/learning-path/review/store'] = 'user/learningpath/create_review';
 $route['member/learning-path/video'] = 'user/learningpath/view_video';
 
 // leader

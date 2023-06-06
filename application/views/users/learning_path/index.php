@@ -200,7 +200,13 @@
 	</div>
 </div>
 
-<div class="container add-review my-5">
-	<button class="btn btn-primary mb-2">Add Reviews</button>
-	<input type="text" class="form-control" placeholder="add your reviews">
+<div class="card bg-primary">
+	<div class="container my-5">
+		<h3 class="testi mt-5">Tell me your experience about learning path !!</h3>
+		<input type="text" class="form-control" placeholder="your name">
+		<input type="text" class="form-control my-2" placeholder="position">
+		<input type="text" class="form-control mb-2" placeholder="reviews">
+		<button class="btn btn-info mb-2">Add Reviews</button>
+	</div>
+
 </div>
