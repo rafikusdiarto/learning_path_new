@@ -46,55 +46,34 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<div class="row">
-							<div class="col-sm-6">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
-									<div class="media">
-										<img src="https://img.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg?w=740&t=st=1685676317~exp=1685676917~hmac=41645e17cc11c44f1c1dff6368846c6a89c46369d853bead3d8e1f74ceb2ae8f" class="mr-3" alt="">
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Paula Wilson</b></div>
-												<div class="details">Media Analyst / SkyNet</div>
-												<div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-													</ul>
-												</div>
-											</div>										
-										</div>
-									</div>
-								</div>								
-							</div>
-							<div class="col-sm-6">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
-									<div class="media">
-										<img src="https://img.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg?w=740&t=st=1685676317~exp=1685676917~hmac=41645e17cc11c44f1c1dff6368846c6a89c46369d853bead3d8e1f74ceb2ae8f" class="mr-3" alt="">
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Antonio Moreno</b></div>
-												<div class="details">Web Developer / SoftBee</div>
-												<div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-													</ul>
-												</div>
+							<?php foreach ($reviews as $info):?>
+								<div class="col-sm-6">
+									<div class="testimonial-wrapper">
+										<div class="testimonial"><?php echo $info->review_description; ?></div>
+										<div class="media">
+											<img src="https://img.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg?w=740&t=st=1685676317~exp=1685676917~hmac=41645e17cc11c44f1c1dff6368846c6a89c46369d853bead3d8e1f74ceb2ae8f" class="mr-3" alt="">
+											<div class="media-body">
+												<div class="overview">
+													<div class="name"><b><?php echo $info->name; ?></b></div>
+													<div class="details"><?php echo $info->position; ?></div>
+													<div class="star-rating">
+														<ul class="list-inline">
+															<li class="list-inline-item"><i class="fa fa-star"></i></li>
+															<li class="list-inline-item"><i class="fa fa-star"></i></li>
+															<li class="list-inline-item"><i class="fa fa-star"></i></li>
+															<li class="list-inline-item"><i class="fa fa-star"></i></li>
+															<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+														</ul>
+													</div>
+												</div>										
 											</div>
 										</div>
-									</div>
-								</div>								
-							</div>
-						</div>			
-					</div>
-					<div class="carousel-item">
+									</div>								
+								</div>
+								<?php endforeach?>
+							</div>			
+						</div>
+					<!-- <div class="carousel-item">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="testimonial-wrapper">
@@ -193,7 +172,7 @@
 								</div>								
 							</div>
 						</div>			
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -203,10 +182,16 @@
 <div class="card bg-primary">
 	<div class="container my-5">
 		<h3 class="testi mt-5">Tell me your experience about learning path !!</h3>
-		<input type="text" class="form-control" placeholder="your name">
-		<input type="text" class="form-control my-2" placeholder="position">
-		<input type="text" class="form-control mb-2" placeholder="reviews">
-		<button class="btn btn-info mb-2">Add Reviews</button>
+		<?php if ($this->session->flashdata('success')) { ?>
+			<div class="alert alert-success">
+				<?php echo $this->session->flashdata('success'); ?>
+			</div>
+    	<?php } ?>
+		<form method="POST" action="<?php echo site_url('member/learning-path/review/store'); ?>">
+			<input type="text" name="name" class="form-control" placeholder="Your name">
+			<input type="text" name="position" class="form-control my-2" placeholder="Position">
+			<textarea type="text" name="review_description" class="form-control mb-2" placeholder="Reviews"></textarea>
+			<input class="btn btn-info mb-2" value="Add Reviews" type="submit"></input>
+		</form>
 	</div>
-
 </div>
