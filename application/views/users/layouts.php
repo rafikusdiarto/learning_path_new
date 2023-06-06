@@ -146,7 +146,7 @@
 		.section-title { margin-bottom: 60px; }
 		
 		/* card */
-		.section_our_solution .row {
+		/* .section_our_solution .row {
 		align-items: center;
 		margin-top:100px;
 		}
@@ -156,11 +156,9 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		}
-		.our_solution_category .solution_cards_box {
+		.solution_cards_box {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		}
+		} */
 		.solution_cards_box .solution_card {
 		flex: 0 50%;
 		background: #fff;

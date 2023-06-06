@@ -25,11 +25,12 @@ class Dashboard extends CI_Controller
   {
     parent::__construct();
 		$this->load->library('session');
-
+		$this->load->model('LearningPath_model');
   }
 
   public function index()
   {
+		$data['learning_path'] = $this->LearningPath_model->get_all_learning_path();
 		$data['sidebar'] = $this->load->view('users/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
