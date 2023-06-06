@@ -24,10 +24,14 @@ class LearningPath extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+		$this->load->library('session');
+		$this->load->model('LearningPath_model');
+
   }
 
-  public function index()
+  public function index($id)
   {
+		$data['learning_path_detail'] = $this->LearningPath_model->get_learning_path_by_id($id);
 		$data['sidebar'] = $this->load->view('users/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
@@ -43,6 +47,11 @@ class LearningPath extends CI_Controller
 
     $this->load->view('users/layouts', $data);
 
+	}
+
+	function view_video()
+	{
+		$this->load->view('users/learning_path/video');
 	}
 
 }

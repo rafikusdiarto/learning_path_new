@@ -82,7 +82,7 @@
 						<p>
 						Berikut adalah tips dari kita untuk bisa sukses di <b>BIGENMI</b>  <br>
 						dan ini adalah yang kita terapakan selama kurang lebih 4 th menjalakan bisnis <b>BIGENMI</b> 
-						<a href="<?= base_url('member/learning-path/detail') ?>" class="btn btn-info mt-3">Read More</a>
+						<a href="<?= base_url('member/learning-path/detail/'. $info->id) ?>" class="btn btn-info mt-3">Read More</a>
 					</div>
 				</div>
 
