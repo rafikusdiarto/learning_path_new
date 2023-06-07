@@ -29,5 +29,20 @@ class Leader_model extends CI_Model {
     {
         return $this->db->get('leaders')->result();
     }
+
+	public function create_leader($data)
+    {
+        $this->db->insert('leaders', $data);
+		return $this->db->insert_id();
+    }
+
+    public function delete_leader($id)
+    {
+        return $this->db->delete('leaders', array('id' => $id));
+    }
+	
+	public function get_leader_count() {
+        return $this->db->count_all('leaders'); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
+    }
 }
 

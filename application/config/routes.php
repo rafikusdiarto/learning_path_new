@@ -68,6 +68,9 @@ $roite['admin/logout'] = 'auth/adminauthcontroller/logout';
 // admin
 $route['admin/dashboard'] = 'admin/dashboard/index';
 $route['admin/leader'] = 'admin/leader/index';
+$route['admin/leader/add'] = 'admin/leader/add_leader';
+$route['admin/leader/create'] = 'admin/leader/create_leader';
+$route['admin/leader/delete/(:num)'] = 'admin/leader/delete_leader/$1';
 $route['admin/learning-path'] = 'admin/learningpath/index';
 $route['admin/learning-path/add'] = 'admin/learningpath/add';
 $route['admin/learning-path/edit'] = 'admin/learningpath/edit';
