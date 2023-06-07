@@ -25,9 +25,24 @@ class User_model extends CI_Model {
         }
     }
 
-	public function get_all_user()
+	public function get_all_member()
     {
         return $this->db->get('users')->result();
+    }
+
+	public function create_member($data)
+    {
+        $this->db->insert('users', $data);
+		return $this->db->insert_id();
+    }
+
+    public function delete_member($id)
+    {
+        return $this->db->delete('users', array('id' => $id));
+    }
+	
+	public function get_member_count() {
+        return $this->db->count_all('users'); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
     }
 }
 

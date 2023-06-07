@@ -75,6 +75,9 @@ $route['admin/learning-path'] = 'admin/learningpath/index';
 $route['admin/learning-path/add'] = 'admin/learningpath/add';
 $route['admin/learning-path/edit'] = 'admin/learningpath/edit';
 $route['admin/member'] = 'admin/member/index';
+$route['admin/member/add'] = 'admin/member/add_member';
+$route['admin/member/create'] = 'admin/member/create_member';
+$route['admin/member/delete/(:num)'] = 'admin/member/delete_member/$1';
 $route['admin/quiz'] = 'admin/questions/index';
 $route['admin/all-user'] = 'admin/user/index';
 
