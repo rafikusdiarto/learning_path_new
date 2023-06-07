@@ -15,10 +15,10 @@
 
 	</div>
 	<?php if ($this->session->flashdata('success')) { ?>
-	<div class="alert alert-success">
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-	<?php } ?>
+        <div class="alert alert-success">
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <?php } ?>
                     <!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">

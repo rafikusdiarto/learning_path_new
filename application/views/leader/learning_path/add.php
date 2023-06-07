@@ -14,9 +14,6 @@
 		</div>
 	</div>
 
-	<?php if ($this->session->flashdata('error')) : ?>
-        	<div style="color: red;"><?php echo $this->session->flashdata('error'); ?></div>
-    	<?php endif; ?>
 	<div>
 		<div class="card">
 			<div class="card-body">
