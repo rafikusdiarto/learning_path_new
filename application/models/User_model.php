@@ -24,5 +24,10 @@ class User_model extends CI_Model {
             return false;
         }
     }
+
+	public function get_all_user()
+    {
+        return $this->db->get('users')->result();
+    }
 }
 

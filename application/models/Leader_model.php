@@ -24,5 +24,10 @@ class Leader_model extends CI_Model {
             return false;
         }
     }
+
+	public function get_all_leader()
+    {
+        return $this->db->get('leaders')->result();
+    }
 }
 

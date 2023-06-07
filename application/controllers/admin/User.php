@@ -24,10 +24,14 @@ class User extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+		$this->load->model('Leader_model');
+		$this->load->model('User_model');
   }
 
   public function index()
   {
+		$data['leader'] = $this->db->get('leaders')->result();
+		$data['user'] = $this->db->get('users')->result();
 		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
