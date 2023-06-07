@@ -24,12 +24,16 @@ class Dashboard extends CI_Controller
   public function __construct()
   	{
     	parent::__construct();
-
+		$this->load->model('LearningPath_model');
+		$this->load->model('User_model');
+		$this->load->model('Leader_model');
 	}
 
 	public function index()
 	{
-			
+		$data['totalMember'] = $this->User_model->get_member_count();
+		$data['totalLeader'] = $this->Leader_model->get_leader_count();
+		$data['totalLearningPath'] = $this->LearningPath_model->get_data_count();
 		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);
