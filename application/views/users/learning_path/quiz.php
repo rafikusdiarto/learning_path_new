@@ -1,4 +1,10 @@
-<div class="container p-5 mb-5"> 
+<?php if (count($quizes) > 0): ?>
+	<div class="p-5">
+		<a href="<?= base_url('member/dashboard')?>" class="btn btn-success">
+			<i class="fa fa-arrow-left"></i>	
+		Back</a>
+	</div>
+	<div class="container p-5 mb-5"> 
 	<form action="<?php echo site_url('member/learning-path/submit-quiz/'.$quizes[0]['id']); ?>" method="post">
 		<div class="row"> 
 			<?php foreach ($quizes as $info): ?>
@@ -19,7 +25,20 @@
 			</div> 
 		</div>
 		</form>
-		
+<?php else: ?>
+	<div class="p-5">
+		<a href="<?= base_url('member/dashboard')?>" class="btn btn-success">
+			<i class="fa fa-arrow-left"></i>	
+		Back</a>
+	</div>
+	<div class="card">
+		<div class="card-shadow">
+			<h3 class="text-center p-5 my-5 alert alert-info">Belum Ada Quiz Yang Tersedia</h3>
+		</div>
+	</div>
+<?php endif; ?>
+
+
 
 	
 	
