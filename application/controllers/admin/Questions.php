@@ -24,10 +24,13 @@ class Questions extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+		$this->load->model('Quiz_model');
+		$this->load->helper('date');
   }
 
   public function index()
   {
+		$data['history'] = $this->Quiz_model->get_all_quiz_history();
 		$data['sidebar'] = $this->load->view('admin/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('admin/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('admin/layouts/components/footer', '', TRUE);

@@ -34,11 +34,7 @@
 								<td><?php echo $no++; ?></td>
 								<td><?php echo $info->learning_path_name; ?></td>
 								<td><?php echo $info->score; ?></td>
-								<td>
-									<div>
-										<a href="<?= base_url('leader/quiz/detail/'. $info->id)?>" class="btn btn-primary">Detail</a>
-									</div>
-								</td>
+								<td class="text-success"><?php echo nice_date($info->created_at, 'd F Y, h:i:s A'); ?></td>
 							</tr>
 						<?php endforeach ?>
 					</tbody>

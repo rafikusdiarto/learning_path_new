@@ -1,33 +1,44 @@
-<h1 class="h3 mb-2 text-gray-800">Questions</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Questions Table</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Learning Path</th>
-                                            <th>Leader</th>
-                                            <th>Average Score</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>System Architect</td>
-                                            <td>Rafi</td>
-                                            <td>61</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+<div class="d-flex container justify-content-between">
+		<div>
+			<h1 class="h3 mb-2 mt-5 text-gray-800">Your History For Learning Path</h1>
+		</div>
+
+		<div class="p-5">
+			<a href="<?= base_url('admin/dashboard')?>" class="btn btn-success">
+				<i class="fa fa-arrow-left"></i>	
+			Back</a>
+		</div>
+
+	</div>
+
+	<div class="mx-5 card shadow mb-4">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">History Quiz</h6>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Learning Path</th>
+							<th>Score</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<?php $no = 1; ?>
+					<tbody>
+						<?php foreach ($history as $info):?>
+							<tr>
+								<td><?php echo $no++; ?></td>
+								<td><?php echo $info->learning_path_name; ?></td>
+								<td><?php echo $info->score; ?></td>
+								<td class="text-success"><?php echo nice_date($info->created_at, 'd F Y, h:i:s A'); ?></td>
+							</tr>
+						<?php endforeach ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>

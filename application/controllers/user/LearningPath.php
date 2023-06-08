@@ -28,6 +28,7 @@ class LearningPath extends CI_Controller
 		$this->load->model('LearningPath_model');
 		$this->load->model('Quiz_model');
 		$this->load->model('Review_model');
+		$this->load->helper('date');
 
   }
 
