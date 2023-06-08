@@ -12,10 +12,6 @@
 				Back</a>
 			</div>
 		</div>
-		
-		<!-- <?php echo var_dump($questions); ?>
-		
-		<?php echo var_dump($selected_answer); ?> -->
 
 	<div>
 		<div class="card">

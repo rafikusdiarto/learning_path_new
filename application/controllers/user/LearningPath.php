@@ -67,12 +67,17 @@ class LearningPath extends CI_Controller
 			}
 		}
 
-		$data['selected_answer'] = $this->input->post('answer_' . $question['id']);
+		$total_score = $correct_answers * 10;
+
+		$learning_path_id = $this->input->post('learning_path_id');
+		$score = $total_score;
+        $this->Quiz_model->save_score($learning_path_id, $score);
+
 		$data['questions'] = $this->Quiz_model->get_quiz_by_learningpath($id);
 		$data['quizes'] = $this->LearningPath_model->get_learning_path_by_id($id);
 		$data['total_questions'] = $this->Quiz_model->count_quiz_by_learningpath($id);
 		$data['correct_answers'] = $correct_answers;
-		$data['score'] = $correct_answers * 10;
+		$data['score'] = $total_score;
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
 		$data['content_view'] = 'users/learning_path/result';
@@ -83,6 +88,7 @@ class LearningPath extends CI_Controller
 
 	public function history()
 	{
+		$data['history'] = $this->Quiz_model->get_all_quiz_history();
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
 		$data['content_view'] = 'users/learning_path/history';
@@ -106,6 +112,5 @@ class LearningPath extends CI_Controller
         }
         redirect($_SERVER['HTTP_REFERER'], 'refresh');
 	}
-
 }
 

@@ -10,6 +10,7 @@
 			<?php foreach ($quizes as $info): ?>
 			<div class="col-12 mb-5"> 
 				<p class="font-bold" style="font-weight:bold"><?php echo $info['questions_text']; ?></p> 
+				<input type="hidden" name="learning_path_id" value="<?php echo $info['learning_path_id']; ?>">
 				<div>
 					<input type="radio" name="answer_<?php echo $info['id']; ?>" value="A"> <?php echo $info['choiceA']; ?><br>
 					<input type="radio" name="answer_<?php echo $info['id']; ?>" value="B"> <?php echo $info['choiceB']; ?><br>
