@@ -63,14 +63,16 @@ class LearningPath extends CI_Controller
 			$selected_answer = $this->input->post('answer_' . $question['id']);
 
 			if ($selected_answer == $question['answer_key']) {
-				$correct_answers++ ;
+				$correct_answers++;
 			}
 		}
 
 		$data['selected_answer'] = $this->input->post('answer_' . $question['id']);
 		$data['questions'] = $this->Quiz_model->get_quiz_by_learningpath($id);
 		$data['quizes'] = $this->LearningPath_model->get_learning_path_by_id($id);
+		$data['total_questions'] = $this->Quiz_model->count_quiz_by_learningpath($id);
 		$data['correct_answers'] = $correct_answers;
+		$data['score'] = $correct_answers * 10;
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('users/layouts/components/footer', '', TRUE);
 		$data['content_view'] = 'users/learning_path/result';

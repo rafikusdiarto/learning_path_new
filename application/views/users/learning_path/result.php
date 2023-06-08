@@ -12,6 +12,7 @@
 				Back</a>
 			</div>
 		</div>
+		
 		<!-- <?php echo var_dump($questions); ?>
 		
 		<?php echo var_dump($selected_answer); ?> -->
@@ -19,8 +20,9 @@
 	<div>
 		<div class="card">
 			<div class="card-body">
-				<div>
-					<h2>Your Score : <?php echo $correct_answers; ?></h2>
+				<div class="alert alert-success p-3">
+					<h4>Correct Answer : <?php echo $correct_answers; ?> of <?php echo $total_questions; ?> questions</h4>
+					<p>Your Score : <?php echo $score; ?></p>
 				</div>
 			</div>
 		</div>

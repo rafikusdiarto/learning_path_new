@@ -48,6 +48,13 @@ class Quiz_model extends CI_Model {
         $query = $this->db->get('quizes');
         return $query->result_array();
     }
+
+	public function count_quiz_by_learningpath($id)
+    {
+        $this->db->where('learning_path_id', $id);
+        $this->db->from('quizes');
+        return $this->db->count_all_results();
+    }
 	public function get_data_count() {
         return $this->db->count_all('quizes'); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
     }

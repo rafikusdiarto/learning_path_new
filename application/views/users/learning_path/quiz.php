@@ -1,4 +1,4 @@
-<?php if (count($quizes) > 0): ?>
+<?php if (!empty($quizes)): ?>
 	<div class="p-5">
 		<a href="<?= base_url('member/dashboard')?>" class="btn btn-success">
 			<i class="fa fa-arrow-left"></i>	
