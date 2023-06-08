@@ -30,7 +30,7 @@
 					</div>
 					<div class="mb-3">
 						<label for="nama" class="form-label">Deskripsi</label>
-						<input type="text" class="form-control" id="description" name="description" value="<?php echo $learning_path->description?>">
+						<textarea type="text" class="form-control" id="description" name="description" value="<?php echo $learning_path->description?>"><?php echo $learning_path->description?></textarea>
 					</div>
 					<div class="mb-3">
 						<label for="no_rek" class="form-label">Thumbnail</label>

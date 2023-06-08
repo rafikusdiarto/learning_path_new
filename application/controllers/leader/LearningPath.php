@@ -102,11 +102,15 @@ class LearningPath extends CI_Controller
 			'description' => $this->input->post('description'),
 		];
 
-        $affected_rows = $this->LearningPath_model->update_learning_path($id, $data);
+        $learning_path_id = $this->LearningPath_model->update_learning_path($id, $data);
 
-        if ($affected_rows) {
-            redirect('leader/learning-path');
-        }
+        if ($learning_path_id) {
+			$this->session->set_flashdata('success', 'Learning Path successfully edit.');
+		} else {
+			$this->session->set_flashdata('error', 'Failed to edit Learning Path.');
+		}
+		redirect('leader/learning-path');
+
     }
 
     public function delete_learning_path($id)

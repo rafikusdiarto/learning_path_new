@@ -103,9 +103,9 @@ class LearningPath extends CI_Controller
         $learning_path_id = $this->LearningPath_model->update_learning_path($id, $data);
 
         if ($learning_path_id) {
-			$this->session->set_flashdata('success', 'Learning Path successfully added.');
+			$this->session->set_flashdata('success', 'Learning Path successfully edit.');
 		} else {
-			$this->session->set_flashdata('error', 'Failed to create Learning Path.');
+			$this->session->set_flashdata('error', 'Failed to edit Learning Path.');
 		}
 		redirect('admin/learning-path');
 
