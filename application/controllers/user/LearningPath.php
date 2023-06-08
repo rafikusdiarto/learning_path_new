@@ -105,15 +105,5 @@ class LearningPath extends CI_Controller
         redirect($_SERVER['HTTP_REFERER'], 'refresh');
 	}
 
-	
-
-
-	function view_video()
-	{
-		$this->load->view('users/learning_path/video');
-	}
-
-	
-
 }
 

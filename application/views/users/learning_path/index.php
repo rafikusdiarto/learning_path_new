@@ -1,4 +1,8 @@
 
+<?php 
+  $videoURL = $learning_path_detail->link_youtube;
+  $convertedURL = str_replace("watch?v=","embed/", $videoURL);
+?>
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row justify-content-between">
@@ -19,8 +23,7 @@
 									<a href="<?= base_url('member/learning-path/quiz/'. $learning_path_detail->id) ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
 								</div>
 								<div class="col-12 col-md-5 mb-4 ml-md-auto">
-								<iframe width="560" height="315" src="<?php echo base_url('member/learning-path/video'); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-								<!-- <iframe width="560" height="315" src="<?php echo $learning_path_detail->link_youtube; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+								<iframe width="560" height="315" src="<?php echo $convertedURL; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
