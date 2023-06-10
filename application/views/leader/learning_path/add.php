@@ -14,6 +14,9 @@
 		</div>
 	</div>
 
+	<?php if (isset($error)) : ?>
+		<div class="alert alert-danger"><?= $error ?></div>
+	<?php endif; ?>
 	<div>
 		<div class="card">
 			<div class="card-body">
@@ -22,10 +25,6 @@
 						<label for="nama" class="form-label">Learning Path Title</label>
 						<input type="text" class="form-control" id="title" name="title" required>
 					</div>
-					<!-- <div class="mb-3">
-						<label for="no_rek" class="form-label">Total Step</label>
-						<input type="text" class="form-control" id="step" name="step">
-					</div> -->
 					<div class="mb-3">
 						<label for="nama" class="form-label">Link Youtube</label>
 						<input type="text" class="form-control" id="link_youtube" name="link_youtube" required>
@@ -33,22 +32,13 @@
 					<div class="mb-3">
 						<label for="no_rek" class="form-label">Thumbnail</label>
 						<img id="image-preview" width="300px" class="mb-2">
-						<input class="form-control" type="file" id="thumbnail" name="thumbnail" onchange="previewImage()" required>
+						<input class="form-control" type="file" accept="image/png, image/jpeg, image/jpg, image/gif" id="image-input" name="thumbnail" onchange="previewImage()" required>
 					</div>
 					<div class="mb-3">
 						<label for="nama" class="form-label">Description</label>
 						<textarea type="text" class="form-control" id="description" name="description" required></textarea>
 					</div>
-					<!-- <div class="mb-3">
-						<label for="tanggal_bayar" class="form-label">Tanggal Bayar</label>
-						<input type="date" class="form-control" id="tanggal_bayar" name="tanggal_bayar">
-					</div>
-					<div class="mb-3">
-						<label for="expired_date" class="form-label">Expired Date</label>
-						<input type="text" class="form-control" id="expired_date" name="expired_date" readonly>
-					</div> -->
 					<input type="submit" class="btn btn-primary" value="Simpan"></input>
-			
 				</form>
 			</div>
 		</div>

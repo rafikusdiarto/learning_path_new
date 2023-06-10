@@ -54,33 +54,35 @@ class LearningPath extends CI_Controller
 	public function create()
     { 	
 
-		$data = [
-			'title' => $this->input->post('title'),
-			'link_youtube' => $this->input->post('link_youtube'),
-			'description' => $this->input->post('description'),
-		];
+		$config['upload_path'] = "./uploads/";
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['max_size'] = 5000; 
+        $this->load->library('upload', $config);
+		$this->upload->initialize($config);
 
-        if (!empty($_FILES['thumbnail'])) {
-            $config['upload_path'] = FCPATH. './uploads/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = 2048; // 2MB
-
-            $this->upload->initialize($config);
-
-            if ($this->upload->do_upload('thumbnail')) {
-                $uploadData = $this->upload->data();
-                $data['thumbnail'] = $uploadData['file_name'];
-            }
+        if (!$this->upload->do_upload('thumbnail')) {
+            $error = $this->upload->display_errors();
+            echo $error;
         }
+            else {
+				$uploaded_data = $this->upload->data();
 
-        $learning_path_id = $this->LearningPath_model->create_learning_path($data);
-        if ($learning_path_id) {
-            $this->session->set_flashdata('success', 'Learning Path created successfully.');
-        } else {
-            $this->session->set_flashdata('error', 'Failed to create Learning Path.');
+				$new_data = [
+					'title' => $this->input->post('title'),
+					'link_youtube' => $this->input->post('link_youtube'),
+					'description' => $this->input->post('description'),
+					'thumbnail' => $uploaded_data['file_name'],
+				];
+		
+				$learning_path_id = $this->LearningPath_model->create_learning_path($new_data);
+				if ($learning_path_id) {
+					$this->session->set_flashdata('success', 'Learning Path created successfully.');
+				} else {
+					$this->session->set_flashdata('error', 'Failed to create Learning Path.');
+				}
+				redirect('leader/learning-path');
         }
-        redirect('leader/learning-path');
-        // Upload gambar
+    
     }
 
 	public function edit_learning_path($id)
@@ -96,20 +98,34 @@ class LearningPath extends CI_Controller
 
 	public function update_learning_path($id) {
 
-		$data = [
-			'title' => $this->input->post('title'),
-			'link_youtube' => $this->input->post('link_youtube'),
-			'description' => $this->input->post('description'),
-		];
+		$config['upload_path'] = "./uploads/";
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['max_size'] = 5000; 
+        $this->load->library('upload', $config);
+		$this->upload->initialize($config);
 
-        $learning_path_id = $this->LearningPath_model->update_learning_path($id, $data);
+        if (!$this->upload->do_upload('thumbnail')) {
+            $error = $this->upload->display_errors();
+            echo $error;
+        }
+            else {
+				$uploaded_data = $this->upload->data();
 
-        if ($learning_path_id) {
-			$this->session->set_flashdata('success', 'Learning Path successfully edit.');
-		} else {
-			$this->session->set_flashdata('error', 'Failed to edit Learning Path.');
-		}
-		redirect('leader/learning-path');
+				$new_data = [
+					'title' => $this->input->post('title'),
+					'link_youtube' => $this->input->post('link_youtube'),
+					'description' => $this->input->post('description'),
+					'thumbnail' => $uploaded_data['file_name'],
+				];
+		
+				$learning_path_id = $this->LearningPath_model->update_learning_path($id, $new_data);
+				if ($learning_path_id) {
+					$this->session->set_flashdata('success', 'Learning Path created successfully.');
+				} else {
+					$this->session->set_flashdata('error', 'Failed to create Learning Path.');
+				}
+				redirect('leader/learning-path');
+        }
 
     }
 
@@ -118,8 +134,11 @@ class LearningPath extends CI_Controller
 		$affected_rows = $this->LearningPath_model->delete_learning_path($id);
 
         if ($affected_rows) {
-            redirect('leader/learning-path');
-        }
+			$this->session->set_flashdata('success', 'Learning Path delete successfully.');
+		} else {
+			$this->session->set_flashdata('error', 'Failed to delte Learning Path.');
+		}
+		redirect('leader/learning-path');
     }
 }
 

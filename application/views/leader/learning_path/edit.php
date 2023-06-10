@@ -14,7 +14,7 @@
 	<div>
 		<div class="card">
 			<div class="card-body">
-				<form method="POST" action="<?php echo base_url('leader/learning-path/update/'. $learning_path->id); ?>">
+				<form method="POST" action="<?php echo base_url('leader/learning-path/update/'. $learning_path->id); ?>" enctype="multipart/form-data">
 					<!-- <input type="hidden" value="<?php echo $learning_path->id; ?>"> -->
 					<div class="mb-3">
 						<label for="nama" class="form-label">Learning Path Title</label>
@@ -34,8 +34,8 @@
 					</div>
 					<div class="mb-3">
 						<label for="no_rek" class="form-label">Thumbnail</label>
-						<img id="image-preview" width="300px" class="mb-2">
-						<input class="form-control" type="file" id="image-input" name="image" onchange="previewImage()">
+						<img id="image-preview"  src="<?php echo base_url('./uploads/'.$learning_path->thumbnail); ?>" width="300px" class="mb-2">
+						<input class="form-control" type="file" accept="image/png, image/jpeg, image/jpg, image/gif" id="image-input" name="thumbnail" onchange="previewImage()" required>
 					</div>
 					<!-- <div class="mb-3">
 						<label for="tanggal_bayar" class="form-label">Tanggal Bayar</label>
