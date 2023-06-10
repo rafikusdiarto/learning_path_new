@@ -19,6 +19,7 @@
 				<div class="alert alert-success p-3">
 					<h4>Correct Answer : <?php echo $correct_answers; ?> of <?php echo $total_questions; ?> questions</h4>
 					<p>Your Score : <?php echo $score; ?></p>
+					<p>Jawaban dipilih :</p>
 				</div>
 			</div>
 		</div>
