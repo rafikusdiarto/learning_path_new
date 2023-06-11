@@ -29,7 +29,7 @@ $config['overwrite'] = true;
 // 
 
 $config['base_url'] = "http://localhost/learning_path_new/";
-$config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
+// $config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/';
 
 /*
