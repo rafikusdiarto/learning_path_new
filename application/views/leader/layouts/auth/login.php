@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	<link rel="icon" href="<?=base_url()?>assets/img/favicon/cropped-favicon-180x180.png">
+
 
     <title>Learning Path - Login</title>
 
@@ -69,12 +71,11 @@
                                     </form>
 									<?= form_close(); ?>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+									<div class="text-center">
+                                        <p class="small">Are you member?
+										<a href="<?= base_url('login'); ?>">Login here</a>
+									</p>
                                     </div>
-                                    <!-- <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
