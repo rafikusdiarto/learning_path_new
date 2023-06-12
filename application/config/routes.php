@@ -61,7 +61,6 @@ $route['leader/quiz/delete/(:num)'] = 'leader/quiz/delete_quiz/$1';
 $route['leader/step'] = 'leader/step/index';
 $route['leader/step/add'] = 'leader/step/add_step';
 $route['leader/step/create'] = 'leader/step/create';
-$route['leader/step/detail/(:num)'] = 'leader/step/detail_step/$1';
 $route['leader/step/edit/(:num)'] = 'leader/step/edit_step/$1';
 $route['leader/step/update/(:num)'] = 'leader/step/update_step/$1';
 $route['leader/step/delete/(:num)'] = 'leader/step/delete_step/$1';

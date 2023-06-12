@@ -29,6 +29,7 @@
 							<th>No</th>
 							<th>Learning Path</th>
 							<th>Steps</th>
+							<th>Description</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -39,10 +40,11 @@
 								<td><?php echo $no++; ?></td>
 								<td><?php echo $info->learning_path_name; ?></td>
 								<td><?php echo $info->step; ?></td>
+								<td><?php echo $info->description; ?></td>
 								<td>
 									<div>
-										<a href="<?= base_url('leader/step/edit/'.$info->id)?>" class="btn btn-info">Edit</a>
-										<a href="" class="btn btn-danger">Delete</a>
+										<a href="<?= base_url('leader/step/edit/'.$info->id); ?>" class="btn btn-info">Edit</a>
+										<a href="<?= base_url('leader/step/delete/'.$info->id); ?>" onclick="confirm('Yakin menghapus data ?')" class="btn btn-danger">Delete</a>
 									</div>
 								</td>
 							</tr>

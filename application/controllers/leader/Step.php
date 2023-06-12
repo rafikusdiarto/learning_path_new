@@ -52,11 +52,20 @@ class Step extends CI_Controller
 	}
 
 	public function create(){
-		$data = array(
-            'learning_path_id' => $this->input->post('learning_path_id'),
-            'step' => $this->input->post('step'),
-            'description' => $this->input->post('description'),
-        );
+		$learning_paths_id =  $this->input->post('learning_path_id');
+		$step = $this->input->post('step');
+		$descrition = $this->input->post('description');
+
+		$data = array();
+
+		foreach ($learning_paths_id as $key => $learning_path_id) {
+            $data[] = array(
+                'learning_path_id' => $learning_path_id,
+                'step' => $step[$key],
+                'description' => $descrition[$key]
+            );
+        }
+
         $quiz_id = $this->Step_model->create_step($data);
         if ($quiz_id) {
             $this->session->set_flashdata('success', 'Step created successfully.');
@@ -65,48 +74,43 @@ class Step extends CI_Controller
         }
         redirect('leader/step');
 	}
-
-	public function detail_quiz($id){
-		$data['detail_quiz'] = $this->Quiz_model->get_quiz_by_id($id);
-		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
-		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
-		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
-		$data['content_view'] = 'leader/quiz/detail';
-
-		$this->load->view('leader/layouts', $data);
-
-	}
-
 	
-	public function edit_quiz($id){
-		$data['quiz'] = $this->Quiz_model->get_quiz_by_id($id);
-		$data['learning_path'] = $this->LearningPath_model->get_all_learning_path();
+	public function edit_step($id){
+		$data['step'] = $this->Step_model->get_step_by_id($id);
+		$data['learning_path'] = $this->Step_model->get_all_step();
 		$data['sidebar'] = $this->load->view('leader/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('leader/layouts/components/navbar', '', TRUE);
 		$data['footer'] = $this->load->view('leader/layouts/components/footer', '', TRUE);
-		$data['content_view'] = 'leader/quiz/edit';
+		$data['content_view'] = 'leader/steps/edit';
 
 		$this->load->view('leader/layouts', $data);
 	}
 
-	public function update_quiz($id){
+	public function update_step($id){
 		$data = array(
             'learning_path_id' => $this->input->post('learning_path_id'),
-            'questions_text' => $this->input->post('questions_text'),
-            'choiceA' => $this->input->post('choiceA'),
-            'choiceB' => $this->input->post('choiceB'),
-            'choiceC' => $this->input->post('choiceC'),
-            'choiceD' => $this->input->post('choiceD'),
-            'answer_key' => $this->input->post('answer_key'),
-            'questions_score' => $this->input->post('questions_score'),
+            'step' => $this->input->post('step'),
+            'description' => $this->input->post('description'),
         );
-        $quiz_id = $this->Quiz_model->update_quiz($id, $data);
-        if ($quiz_id) {
-            $this->session->set_flashdata('success', 'Quiz updated successfully.');
+        $step_id = $this->Step_model->update_step($id, $data);
+        if ($step_id) {
+            $this->session->set_flashdata('success', 'Step updated successfully.');
         } else {
-            $this->session->set_flashdata('error', 'Failed to update Quiz.');
+            $this->session->set_flashdata('error', 'Failed to update Step.');
         }
-        redirect('leader/quiz');
+        redirect('leader/step');
 	}
+
+	public function delete_step($id)
+    {
+		$affected_rows = $this->Step_model->delete_step($id);
+
+        if ($affected_rows) {
+			$this->session->set_flashdata('success', 'Step delete successfully.');
+		} else {
+			$this->session->set_flashdata('error', 'Failed to delte Step.');
+		}
+		redirect('leader/step');
+    }
 }
 

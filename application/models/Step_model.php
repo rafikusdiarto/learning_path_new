@@ -19,12 +19,20 @@ class Step_model extends CI_Model {
 
     public function get_step_by_id($id)
     {
+		// $this->db->select('steps.*, learning_paths.title as learning_path_name');
+        // $this->db->from('steps');
+        // $this->db->join('learning_paths', 'steps.learning_path_id = learning_paths.id');
+		// $query = $this->db->get_where('steps', array('id' => $id))->row();
+
+        // return $query->result();
+
+
         return $this->db->get_where('steps', array('id' => $id))->row();
     }
 
     public function create_step($data)
     {
-        $this->db->insert('steps', $data);
+        $this->db->insert_batch('steps', $data);
 		return $this->db->insert_id();
     }
 

@@ -51,9 +51,9 @@
 		var idLearningPath = document.getElementById('learning_path_id');
 
 		// Fungsi untuk mengenerate form
-		var inputStepTitle = 'step'; 
-		var inputDescription = 'description'; 
-		var inputLearningPathId = 'learning_path_id'; 
+		var inputStepTitle = 'step[]'; 
+		var inputDescription = 'description[]'; 
+		var inputLearningPathId = 'learning_path_id[]'; 
 		function generateForm() {
 			// Menghapus form yang ada sebelumnya
 			document.getElementById("submit-button").style.display = "block";
