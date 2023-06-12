@@ -58,6 +58,14 @@ $route['leader/quiz/detail/(:num)'] = 'leader/quiz/detail_quiz/$1';
 $route['leader/quiz/edit/(:num)'] = 'leader/quiz/edit_quiz/$1';
 $route['leader/quiz/update/(:num)'] = 'leader/quiz/update_quiz/$1';
 $route['leader/quiz/delete/(:num)'] = 'leader/quiz/delete_quiz/$1';
+$route['leader/step'] = 'leader/step/index';
+$route['leader/step/add'] = 'leader/step/add_step';
+$route['leader/step/create'] = 'leader/step/create';
+$route['leader/step/detail/(:num)'] = 'leader/step/detail_step/$1';
+$route['leader/step/edit/(:num)'] = 'leader/step/edit_step/$1';
+$route['leader/step/update/(:num)'] = 'leader/step/update_step/$1';
+$route['leader/step/delete/(:num)'] = 'leader/step/delete_step/$1';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

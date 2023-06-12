@@ -39,6 +39,12 @@
                     <span>Quiz</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="<?=base_url('leader/step')?>">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Steps</span></a>
+            </li>
+
 
             <!-- Nav Item - Tables -->
 
