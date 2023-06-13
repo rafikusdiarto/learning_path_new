@@ -18,12 +18,7 @@
 			<div class="card-body">
 				<form method="POST" action="<?php echo site_url('leader/quiz/update/'. $quiz->id); ?>" enctype="multipart/form-data">
 					<div class="mb-3">
-						<select class="form-control" aria-label="Default select example" class="form-control" placeholder="choose learning path" name="learning_path_id" required>
-							<option selected></option>
-							<?php foreach ($learning_path as $info ):?>
-								<option value="<?php echo $info->id;?>"><?php echo $info->title;?></option>
-							<?php endforeach?>
-						</select>		
+						<input type="hidden" class="form-control" id="learning_path_id" name="learning_path_id" placeholder="input step title" value="<?php echo $quiz->learning_path_id; ?>" required>
 					</div>
 					<div class="mb-3">
 						<label for="nama" class="form-label">Questions</label>

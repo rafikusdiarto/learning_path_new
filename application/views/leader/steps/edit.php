@@ -25,7 +25,6 @@
 						</select>		
 					</div> -->
 					<div class="mb-3">
-						<label for="choiceA" class="form-label">Step Title</label>
 						<input type="hidden" class="form-control" id="learning_path_id" name="learning_path_id" placeholder="input step title" value="<?php echo $step->learning_path_id; ?>" required>
 					</div>
 					<div class="mb-3">

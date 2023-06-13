@@ -41,9 +41,9 @@
 								<td><?php echo $info->questions_text; ?></td>
 								<td>
 									<div>
-										<a href="<?= base_url('leader/quiz/detail/'. $info->id)?>" class="btn btn-primary">Detail</a>
-										<a href="<?= base_url('leader/quiz/edit/'. $info->id)?>" class="btn btn-info">Edit</a>
-										<a href="" class="btn btn-danger">Delete</a>
+										<a href="<?= base_url('leader/quiz/detail/'. $info->id); ?>" class="btn btn-primary">Detail</a>
+										<a href="<?= base_url('leader/quiz/edit/'. $info->id); ?>" class="btn btn-info">Edit</a>
+										<a href="<?= base_url('leadear/quiz/delete/'. $info->id); ?>" onclick="confirm('yakin menghapus quiz ?')" class="btn btn-danger">Delete</a>
 									</div>
 								</td>
 							</tr>

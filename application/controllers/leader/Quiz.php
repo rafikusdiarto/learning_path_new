@@ -116,5 +116,17 @@ class Quiz extends CI_Controller
         }
         redirect('leader/quiz');
 	}
+
+	public function delete_quiz($id)
+    {
+		$affected_rows = $this->Quiz_model->delete_quiz($id);
+
+        if ($affected_rows) {
+			$this->session->set_flashdata('success', 'Quiz delete successfully.');
+		} else {
+			$this->session->set_flashdata('error', 'Failed to delte Quiz.');
+		}
+		redirect('leader/quiz');
+    }
 }
 

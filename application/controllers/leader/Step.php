@@ -21,13 +21,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Step extends CI_Controller
 {
     
-  public function __construct()
-  {
-    parent::__construct();
-	$this->load->model('LearningPath_model');
-	$this->load->model('Step_model');
-	$this->load->library('session');
-  }
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('LearningPath_model');
+		$this->load->model('Step_model');
+		$this->load->library('session');
+	}
 
 	public function index(){
 		$data['step'] = $this->Step_model->get_all_step();
