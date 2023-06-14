@@ -4,32 +4,28 @@
   $convertedURL = str_replace("watch?v=","embed/", $videoURL);
 ?>
 <section class="pt-5 pb-5">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col col-md-12 pr-md-5 pl-md-5">
-                <div class="bd-example bd-example-tabs">
-                    <ul class="nav nav-pills  flex-column justify-content-center flex-sm-row mb-3" id="pills-tab" role="tablist">
-						<span class="nav-link pt-md-3 pb-md-3 pr-md-5 pl-md-5 bg-primary text-white" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa fa-laptop fa-lg text-white" aria-hidden="false"></i><?php echo $learning_path_detail->title; ?></span>
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
 
-						<div class="container-fluid mt-5">
-							<div class="row align-items-center justify-content-between">
-								<div class="col-12 col-md-5  text-left">
-									<h2><?php echo $learning_path_detail->title; ?></h2>
-									<p class=" mt-4">
-										<?php echo $learning_path_detail->description; ?>
-									</p>
-									<p class="mt-3">Learn more with to do quiz !!</p>
+			<span class="nav-link pt-md-3 pb-md-3 pr-md-5 pl-md-5 bg-primary text-white rounded" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa fa-laptop fa-lg text-white" aria-hidden="false"></i><?php echo $learning_path_detail->title; ?></span>
 
-									<a href="<?= base_url('member/learning-path/quiz/'. $learning_path_detail->id) ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
-								</div>
-								<div class="col-12 col-md-5 mb-4 ml-md-auto">
-								<iframe width="560" height="315" src="<?php echo $convertedURL; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-								</div>
+			<div class="mt-5 d-flex justify-content-center">
+				<div class="col-6 align-items-center p-3">
+					<h2><?php echo $learning_path_detail->title; ?></h2>
+					<div class="card shadow p-3 mb-5 bg-body rounded">
+						<div class="card-body">
+							<div class="mb-3">
+								<p class="text-justify"><?php echo $learning_path_detail->description; ?></p>
 							</div>
 						</div>
-
-                </div>
-            </div>
+					</div>
+					<p class="mt-3">Learn more with to do quiz !!</p>
+					<a href="<?= base_url('member/learning-path/quiz/'. $learning_path_detail->id) ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
+				</div>
+				<div class="col-5 ml-5 p-3">
+					<iframe width="600" height="350" src="<?php echo $convertedURL; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
         </div>
     </div>
 </section>
