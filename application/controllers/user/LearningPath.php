@@ -58,7 +58,7 @@ class LearningPath extends CI_Controller
 	{
 
 		$questions = $this->Quiz_model->get_quiz_by_learningpath($id);
-		
+			
 		$correct_answers = 0;
 		foreach ($questions as $question) {
 			$selected_answer = $this->input->post('answer_' . $question['id']);
@@ -67,7 +67,7 @@ class LearningPath extends CI_Controller
 				$correct_answers++;
 			}
 		}
-
+ 
 		$total_score = $correct_answers * 10;
 
 		$learning_path_id = $this->input->post('learning_path_id');

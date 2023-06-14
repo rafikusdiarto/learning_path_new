@@ -56,7 +56,7 @@ class LearningPath extends CI_Controller
 
 		$config['upload_path'] = "./uploads/";
         $config['allowed_types'] = 'jpg|jpeg|png';
-        $config['max_size'] = 5000; 
+        $config['max_size'] = 100000; 
         $this->load->library('upload', $config);
 		$this->upload->initialize($config);
 
@@ -100,7 +100,7 @@ class LearningPath extends CI_Controller
 
 		$config['upload_path'] = "./uploads/";
         $config['allowed_types'] = 'jpg|jpeg|png';
-        $config['max_size'] = 5000; 
+        $config['max_size'] = 100000; 
         $this->load->library('upload', $config);
 		$this->upload->initialize($config);
 

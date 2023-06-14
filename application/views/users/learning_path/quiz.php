@@ -5,7 +5,7 @@
 		Back</a>
 	</div>
 	<div class="container p-5 mb-5"> 
-	<form action="<?php echo site_url('member/learning-path/submit-quiz/'.$quizes[0]['id']); ?>" method="post">
+	<form method="POST" action="<?php echo base_url('member/learning-path/submit-quiz/'.$quizes['id']); ?>" enctype="multipart/form-data">
 		<div class="row"> 
 			<?php foreach ($quizes as $info): ?>
 			<div class="col-12 mb-5"> 
@@ -25,7 +25,7 @@
 				</div> 
 			</div> 
 		</div>
-		</form>
+	</form>
 <?php else: ?>
 	<div class="p-5">
 		<a href="<?= base_url('member/dashboard')?>" class="btn btn-success">
