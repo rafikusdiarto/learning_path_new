@@ -27,14 +27,16 @@ class LearningPath extends CI_Controller
 		$this->load->library('session');
 		$this->load->model('LearningPath_model');
 		$this->load->model('Quiz_model');
+		$this->load->model('Step_model');
 		$this->load->model('Review_model');
 		$this->load->helper('date');
 
   }
 
-  public function index($id)
+  public function index($id) 
   {
 		$data['learning_path_detail'] = $this->LearningPath_model->get_learning_path_by_id($id);
+		$data['step_detail'] = $this->Step_model->get_step_by_id($id);
 		$data['reviews'] = $this->Review_model->get_all_review();
 		$data['sidebar'] = $this->load->view('users/layouts/components/sidebar', '', TRUE);
 		$data['navbar'] = $this->load->view('users/layouts/components/navbar', '', TRUE);

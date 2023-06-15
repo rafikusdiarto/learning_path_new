@@ -11,7 +11,7 @@
 
 			<div class="mt-5 d-flex justify-content-center">
 				<div class="col-6 align-items-center p-3">
-					<h2><?php echo $learning_path_detail->title; ?></h2>
+					<h2 class="text-center"><?php echo $learning_path_detail->title; ?></h2>
 					<div class="card shadow p-3 mb-5 bg-body rounded">
 						<div class="card-body">
 							<div class="mb-3">
@@ -19,6 +19,36 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- looping steps -->
+
+					<div class="card shadow p-3 mb-5 bg-body rounded">
+						<div class="card-body">
+							<section id="resume" class="resume section-bg">
+								<div class="container" data-aos="fade-up" data-aos-once='true'>
+									<div class="section-title">
+										<h3>Step</h3>
+									</div>
+									<div class="row">
+										<div class="col-lg-6">
+											<?php foreach ($step_detail as $info): ?>
+											<div class="resume-item">
+												<h5><?php echo $info['step']; ?></h5>
+												<ul>
+													<li><?php echo $info['description']; ?></li>
+												</ul>
+											</div>
+											<?php endforeach ?>
+										</div>
+									</div>
+		
+								</div>
+							</section>
+								
+							</div>
+						</div>
+						
+						
 					<p class="mt-3">Learn more with to do quiz !!</p>
 					<a href="<?= base_url('member/learning-path/quiz/'. $learning_path_detail->id) ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
 				</div>
