@@ -52,12 +52,12 @@ class Leader extends CI_Controller
 
 	public function create_leader()
 	{
-			$data = array(
-				'username' => $this->input->post('username'),
-				'email' => $this->input->post('email'),
-				'password' => $this->encryption->encrypt($this->input->post('password')),
-				'join_at' => $this->input->post('join_at'),
-			);
+		$data = array(
+			'username' => $this->input->post('username'),
+			'email' => $this->input->post('email'),
+			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+			'join_at' => $this->input->post('join_at'),
+		);
 		$leader_id = $this->Leader_model->create_leader($data);
 		if ($leader_id) {
 				$this->session->set_flashdata('success', 'Leader successfully added.');

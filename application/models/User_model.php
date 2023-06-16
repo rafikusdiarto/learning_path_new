@@ -8,8 +8,21 @@ class User_model extends CI_Model {
     }
 
 	public function login($email, $password) {
-        $query = $this->db->get_where('users', array('email' => $email, 'password' => $password));
-        return $query->num_rows() === 1;
+        $this->db->where('email', $email);
+        $query = $this->db->get('users');
+        $user = $query->row();
+
+        // Jika pengguna ditemukan
+        if ($user) {
+            // Verifikasi password
+            $is_password_correct = password_verify($password, $user->password);
+
+            if ($is_password_correct) {
+                return $user; // Password benar, kembalikan data pengguna
+            }
+        }
+
+        return false;
     }
 	
     public function getAccessLevel($userId) {

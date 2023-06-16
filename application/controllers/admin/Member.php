@@ -54,7 +54,7 @@ class Member extends CI_Controller
 			$data = array(
 				'username' => $this->input->post('username'),
 				'email' => $this->input->post('email'),
-				'password' => $this->encryption->encrypt($this->input->post('password')),
+				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			);
 		$member_id = $this->User_model->create_member($data);
 		if ($member_id) {

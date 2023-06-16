@@ -64,9 +64,14 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block mb-2">
                                             Login
                                         </button>
+										<?php if ($this->session->flashdata('error')) { ?>
+											<div class="alert alert-danger">
+												<?php echo $this->session->flashdata('error'); ?>
+											</div>
+										<?php } ?>
                                         <hr>
                                     </form>
 									<?= form_close(); ?>

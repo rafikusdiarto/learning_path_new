@@ -8,8 +8,21 @@ class Leader_model extends CI_Model {
     }
 
 	public function login($email, $password) {
-        $query = $this->db->get_where('leaders', array('email' => $email, 'password' => $password));
-        return $query->num_rows() === 1;
+		$this->db->where('email', $email);
+        $query = $this->db->get('leaders');
+        $leader = $query->row();
+
+        // Jika pengguna ditemukan
+        if ($leader) {
+            // Verifikasi password
+            $is_password_correct = password_verify($password, $leader->password);
+
+            if ($is_password_correct) {
+                return $leader; // Password benar, kembalikan data pengguna
+            }
+        }
+
+        return false;
     }
 	
     public function getAccessLevel($userId) {

@@ -8,9 +8,21 @@ class Admin_model extends CI_Model {
     }
 
 	public function login($email, $password) {
-        $query = $this->db->get_where('admin', array('email' => $email, 'password' => $password));
-        return $query->num_rows() === 1;
-    }
+		$this->db->where('email', $email);
+        $query = $this->db->get('admin');
+        $admin = $query->row();
+
+        // Jika pengguna ditemukan
+        if ($admin) {
+            // Verifikasi password
+            $is_password_correct = password_verify($password, $admin->password);
+
+            if ($is_password_correct) {
+                return $admin; // Password benar, kembalikan data pengguna
+            }
+        }
+
+        return false;    }
 	
     public function getAccessLevel($userId) {
         $this->db->select('access_level');

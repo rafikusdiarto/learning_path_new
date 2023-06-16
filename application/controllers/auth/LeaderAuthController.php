@@ -40,10 +40,9 @@ class LeaderAuthController extends CI_Controller {
                 $this->session->set_userdata('user_id');
                 redirect('leader/dashboard'); // Change 'dashboard' to the desired redirect URL
             } else {
-                // Login failed, show error message
-                $data['error'] = 'Invalid username or password';
-                $this->load->view('leader/layouts/auth/login', $data);
-            }
+				$this->session->set_flashdata('error', 'Email atau password salah!');
+				redirect('login-leader');
+			}
         }
     }
 
