@@ -69,12 +69,12 @@ class LearningPath extends CI_Controller
 				$correct_answers++;
 			}
 		}
- 
-		$total_score = $correct_answers * 10;
 
+		$total_score = $correct_answers * 10;
 		$learning_path_id = $this->input->post('learning_path_id');
 		$score = $total_score;
         $this->Quiz_model->save_score($learning_path_id, $score);
+ 
 
 		$data['questions'] = $this->Quiz_model->get_quiz_by_learningpath($id);
 		$data['quizes'] = $this->LearningPath_model->get_learning_path_by_id($id);

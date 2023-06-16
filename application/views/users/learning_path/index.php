@@ -22,6 +22,7 @@
 
 					<!-- looping steps -->
 
+					<?php if (!empty($step_detail)): ?>
 					<div class="card shadow p-3 mb-5 bg-body rounded">
 						<div class="card-body">
 							<section id="resume" class="resume section-bg">
@@ -41,14 +42,18 @@
 											<?php endforeach ?>
 										</div>
 									</div>
-		
 								</div>
-							</section>
-								
-							</div>
+							</section>		
 						</div>
-						
-						
+					</div>
+					<?php else: ?>
+					<div class="card">
+						<div class="card-shadow p-2">
+							<h3 class="text-center p-5 my-5 alert alert-info">Belum Ada Step Yang Tersedia</h3>
+						</div>
+					</div>
+					<?php endif ?>
+					
 					<p class="mt-3">Learn more with to do quiz !!</p>
 					<a href="<?= base_url('member/learning-path/quiz/'. $learning_path_detail->id) ?>" class="btn btn-primary  btn-rounded shadow py-3 px-5 mt-md-3 mt-2">Start Quiz</a>
 				</div>

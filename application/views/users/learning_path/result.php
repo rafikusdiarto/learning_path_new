@@ -3,7 +3,6 @@
 		<div>
 			<h1 class="h3 mb-2 text-gray-800">Score Questions</h1>
 			<p class="mb-4">Your results from <b> <i> <?php echo $quizes->title; ?></i></b> Learning Path<br>
-
 		</div>
 		
 		<div class="p-5">
@@ -19,7 +18,6 @@
 				<div class="alert alert-success p-3">
 					<h4>Correct Answer : <?php echo $correct_answers; ?> of <?php echo $total_questions; ?> questions</h4>
 					<p>Your Score : <?php echo $score; ?></p>
-					<p>Jawaban dipilih :</p>
 				</div>
 			</div>
 		</div>
