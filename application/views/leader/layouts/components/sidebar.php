@@ -1,60 +1,60 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('leader/dashboard')?>">
-                <div class="sidebar-brand-text mx-3">Learning Path</div>
-            </a>
+	<!-- Sidebar - Brand -->
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('leader/dashboard')?>">
+		<div class="sidebar-brand-text mx-3">Learning Path</div>
+	</a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+	<!-- Divider -->
+	<hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="<?=base_url('leader/dashboard')?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - Leader</span></a>
-            </li>
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Questions
-            </div>
+	<!-- Nav Item - Dashboard -->
+	<li class="nav-item active">
+		<a class="nav-link" href="<?=base_url('leader/dashboard')?>">
+			<i class="fas fa-fw fa-tachometer-alt"></i>
+			<span>Dashboard - Leader</span></a>
+	</li>
 
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?=base_url('leader/learning-path')?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Learning Path</span></a>
-            </li>
-			<hr class="sidebar-divider d-none d-md-block">
+	<!-- Divider -->
+	<hr class="sidebar-divider">
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?=base_url('leader/quiz')?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Quiz</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="<?=base_url('leader/step')?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Steps</span></a>
-            </li>
+	<!-- Heading -->
+	<div class="sidebar-heading">
+		Questions
+	</div>
 
 
-            <!-- Nav Item - Tables -->
+	<!-- Nav Item - Charts -->
+	<li class="nav-item">
+		<a class="nav-link" href="<?=base_url('leader/learning-path')?>">
+			<i class="fas fa-fw fa-chart-area"></i>
+			<span>Learning Path</span></a>
+	</li>
+	<hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+	<li class="nav-item">
+		<a class="nav-link" href="<?=base_url('leader/quiz')?>">
+			<i class="fas fa-fw fa-chart-area"></i>
+			<span>Quiz</span></a>
+	</li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+	<li class="nav-item">
+		<a class="nav-link" href="<?=base_url('leader/step')?>">
+			<i class="fas fa-fw fa-chart-area"></i>
+			<span>Steps</span></a>
+	</li>
 
 
-        </ul>
+	<!-- Nav Item - Tables -->
+
+	<!-- Divider -->
+	<hr class="sidebar-divider d-none d-md-block">
+
+	<!-- Sidebar Toggler (Sidebar) -->
+	<div class="text-center d-none d-md-inline">
+		<button class="rounded-circle border-0" id="sidebarToggle"></button>
+	</div>
+
+
+</ul>

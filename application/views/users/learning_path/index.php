@@ -31,7 +31,7 @@
 										<h3>Step</h3>
 									</div>
 									<div class="row">
-										<div class="col-lg-6">
+										<div class="col">
 											<?php foreach ($step_detail as $info): ?>
 											<div class="resume-item">
 												<h5><?php echo $info['step']; ?></h5>
