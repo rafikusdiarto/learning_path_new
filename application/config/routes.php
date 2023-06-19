@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['default_controller'] = 'welcome';
+
 // auth user
 $route['login'] = 'auth/userauthcontroller/index';
 $route['login/authenticate'] = 'auth/userauthcontroller/authenticate';
